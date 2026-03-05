@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="week1/week1.csproj" />
+  <Project Path="week1/week1.csproj" Id="a3f725fd-7823-4d1f-ae8d-f1f55f54c979" />
+  <Project Path="week2/week2.csproj" Id="c1cfd09c-883e-4e69-9c43-a2efa075d1f2" />
 </Solution>
