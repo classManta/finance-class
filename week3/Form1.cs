@@ -29,7 +29,40 @@ namespace COMSample1
                 MessageBox.Show(strUserID + "登入失敗!狀態碼： " + strStatusCode + "錯誤訊息： " + strMessage);
             }
         }
-
+        void m_SKQuoteLib_OnConnection(int nKind, int nCode)
+        {
+            if (nKind == 3001)
+            {
+                richTextBox1.AppendText("連線中(尚未連線完成)" + nKind + "\n");
+            }
+            else if (nKind == 3002)
+            {
+                richTextBox1.AppendText("斷線" + nKind + "\n");
+            }
+            else if (nKind == 3003)
+            {
+                richTextBox1.AppendText("連線完成(下載完商品檔))" + nKind + "\n");
+            }
+            else if (nKind == 3033)
+            {
+                //異常
+                richTextBox1.AppendText("與報價主機發生異常斷線: " + nKind + "\n");
+            }
+            else
+            {
+                richTextBox1.AppendText("連線狀態事件失敗:" + nKind + "\n");
+            }
+        }
+        void SKQuoteLib_RequestStockList(short sMarketNo)
+        {
+            m_nCode = m_SKQuote.SKQuoteLib_RequestStockList(sMarketNo);
+        }
+        void m_SKQuoteLib_OnNotifyCommodityListWithTypeNo(short sMarketNo, string bstrStocListData) 
+        {
+            string strData = "";
+            strData = "[OnNotifyCommodityList]" + bstrStocListData;
+            StockList.Items.Add(strData);
+        }
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +70,7 @@ namespace COMSample1
             m_pSKCenter = new SKCenterLib();
 
             m_pSKCenter.OnLoginMessage += new _ISKCenterLibEvents_OnLoginMessageEventHandler(this.OnLoginMessage);
+            m_SKQuote.OnConnection += new _ISKQuoteLibEvents_OnConnectionEventHandler(m_SKQuoteLib_OnConnection);
         }
 
         private void button1Login_Click(object sender, EventArgs e)
