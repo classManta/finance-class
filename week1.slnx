@@ -1,4 +1,12 @@
 <Solution>
-  <Project Path="week1/week1.csproj" Id="a3f725fd-7823-4d1f-ae8d-f1f55f54c979" />
-  <Project Path="week2/week2.csproj" Id="c1cfd09c-883e-4e69-9c43-a2efa075d1f2" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="week1/week1.csproj" Id="a3f725fd-7823-4d1f-ae8d-f1f55f54c979">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="week3/week3.csproj" Id="b7292d1f-4dde-4d48-9056-f2ac9c04f43b">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
 </Solution>
