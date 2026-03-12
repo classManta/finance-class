@@ -16,6 +16,8 @@ namespace COMSample1
     {
         int m_nCode;
         SKCenterLib m_pSKCenter;
+        //add com object
+        SKQuoteLib m_SKQuote;
         void OnLoginMessage(string strUserID, string strStatusCode, string strMessage)
         {
             if (strStatusCode == "0")//成功
@@ -31,7 +33,9 @@ namespace COMSample1
         public Form1()
         {
             InitializeComponent();
+            m_SKQuote = new SKQuoteLib();
             m_pSKCenter = new SKCenterLib();
+
             m_pSKCenter.OnLoginMessage += new _ISKCenterLibEvents_OnLoginMessageEventHandler(this.OnLoginMessage);
         }
 
@@ -46,6 +50,20 @@ namespace COMSample1
             else
             {
                 MessageBox.Show(textBox1LoginID.Text.Trim() + " 呼叫登入函式失敗!錯誤代碼:" + m_nCode);
+            }
+        }
+
+        private void buttonEnterMonitorLONG_click_Click(object sender, EventArgs e)
+        {
+            m_nCode = m_SKQuote.SKQuoteLib_EnterMonitorLONG();
+            if (m_nCode == 0)
+            {
+                richTextBox1.AppendText(textBox1LoginID.Text.Trim() + " 呼叫連線函式成功\n");
+            }
+            else
+            {
+                richTextBox1.AppendText(textBox1LoginID.Text.Trim() + " 呼叫連線函式失敗" + m_nCode + "\n");
+
             }
         }
     }
