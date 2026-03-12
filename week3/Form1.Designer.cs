@@ -35,6 +35,7 @@
             this.button1Login = new System.Windows.Forms.Button();
             this.buttonEnterMonitorLONG_click = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.StockList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -92,17 +93,27 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(458, 83);
+            this.richTextBox1.Location = new System.Drawing.Point(418, 31);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(228, 155);
+            this.richTextBox1.Size = new System.Drawing.Size(266, 155);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
+            // 
+            // StockList
+            // 
+            this.StockList.FormattingEnabled = true;
+            this.StockList.ItemHeight = 12;
+            this.StockList.Location = new System.Drawing.Point(418, 241);
+            this.StockList.Name = "StockList";
+            this.StockList.Size = new System.Drawing.Size(266, 88);
+            this.StockList.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.StockList);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonEnterMonitorLONG_click);
             this.Controls.Add(this.button1Login);
@@ -126,6 +137,7 @@
         private System.Windows.Forms.Button button1Login;
         private System.Windows.Forms.Button buttonEnterMonitorLONG_click;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ListBox StockList;
     }
 }
 
