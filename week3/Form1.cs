@@ -12,11 +12,11 @@ namespace week3
 {
     public partial class Form1 : Form
     {
+        SKQuoteLib m_SKQuote;
         public Form1()
         {
-            //測試用
-
             InitializeComponent();
+            m_SKQuote = new SKQuoteLib();
         }
     }
 }

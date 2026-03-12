@@ -6,7 +6,7 @@
   <Project Path="week1/week1.csproj" Id="a3f725fd-7823-4d1f-ae8d-f1f55f54c979">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
-  <Project Path="week3/week3.csproj" Id="b7292d1f-4dde-4d48-9056-f2ac9c04f43b">
+  <Project Path="week2/week2.csproj" Id="a229c3b2-fe6b-4f73-8cab-2566f64f44d9">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
 </Solution>
