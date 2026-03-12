@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace week3.Properties
+namespace COMSample1.Properties
 {
 
 
