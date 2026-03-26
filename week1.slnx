@@ -12,7 +12,13 @@
   <Project Path="week3/week3.csproj" Id="3fee6bc5-0dbb-47ba-94ca-84e2064dac97">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
-  <Project Path="week4/week4.csproj">
+  <Project Path="week4 2.0/week4 2.0.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="week4/week4.csproj" Id="2d7b2371-de70-4b9d-8e62-1badff31c4d4">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="week5/week5.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
 </Solution>
