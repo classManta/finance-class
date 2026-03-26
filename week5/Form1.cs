@@ -712,5 +712,10 @@ namespace COMSample1
             m_nCode = m_SKQuote.SKQuoteLib_RequestStockList(sMarketNo);
             richTextBox1.AppendText("[SKQuoteLib_RequestStockList]" + m_nCode + "\n");
         }
+
+        private void btnSendStocksSocketOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
