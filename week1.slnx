@@ -24,7 +24,4 @@
   <Project Path="week8/week8.csproj" Id="48122cd6-4266-4a88-83b8-64531ffe87b0">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
-  <Project Path="week9/week9.csproj" Id="fda43221-ac92-425f-91ab-db4f4f7c7d9d">
-    <Platform Solution="*|x64" Project="x64" />
-  </Project>
 </Solution>
