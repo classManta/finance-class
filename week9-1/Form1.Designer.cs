@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1LoginID = new System.Windows.Forms.TextBox();
@@ -80,22 +80,41 @@
             this.btnSocketOrderHistoryReport = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.listMessage = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SMAbox = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.buttonClearKlineData = new System.Windows.Forms.Button();
+            this.boxOutType_ByDate = new System.Windows.Forms.ComboBox();
+            this.boxKLine_ByDate = new System.Windows.Forms.ComboBox();
+            this.txtKLine_ByDate = new System.Windows.Forms.TextBox();
+            this.txtMinuteNumber = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.btnKLineAMByDate = new System.Windows.Forms.Button();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.listKLine = new System.Windows.Forms.ListBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.richTextBoxSMA = new System.Windows.Forms.RichTextBox();
             this.buttonCalculateSMA = new System.Windows.Forms.Button();
             this.textBoxSMAperiod = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBoxSMAStockNo = new System.Windows.Forms.TextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.listKLine = new System.Windows.Forms.ListBox();
-            this.btnKLineAMByDate = new System.Windows.Forms.Button();
-            this.boxOutType_ByDate = new System.Windows.Forms.ComboBox();
-            this.boxKLine_ByDate = new System.Windows.Forms.ComboBox();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtMinuteNumber = new System.Windows.Forms.TextBox();
-            this.txtKLine_ByDate = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxBackTesting = new System.Windows.Forms.RichTextBox();
+            this.buttonBackTesting = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBoxTradingStrategy = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxBTEndDate = new System.Windows.Forms.TextBox();
+            this.textBoxBTStartDate = new System.Windows.Forms.TextBox();
+            this.textBoxBTStockNo = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridBest5Bid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridBest5Ask)).BeginInit();
@@ -108,8 +127,13 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.SMAbox.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -206,21 +230,21 @@
             this.gridStocks.AllowUserToAddRows = false;
             this.gridStocks.AllowUserToDeleteRows = false;
             this.gridStocks.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.gridStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridStocks.Location = new System.Drawing.Point(5, 49);
             this.gridStocks.Name = "gridStocks";
             this.gridStocks.ReadOnly = true;
             this.gridStocks.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.gridStocks.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gridStocks.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridStocks.RowTemplate.Height = 24;
             this.gridStocks.Size = new System.Drawing.Size(595, 219);
             this.gridStocks.TabIndex = 11;
@@ -364,7 +388,7 @@
             this.groupBox2.Controls.Add(this.buttonEnterMonitorLONG);
             this.groupBox2.Location = new System.Drawing.Point(17, 89);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(332, 63);
+            this.groupBox2.Size = new System.Drawing.Size(332, 149);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "行情";
@@ -375,7 +399,7 @@
             this.groupBox3.Controls.Add(this.MarketNo_txt);
             this.groupBox3.Controls.Add(this.RequestStockListBtn);
             this.groupBox3.Controls.Add(this.StockList);
-            this.groupBox3.Location = new System.Drawing.Point(631, 11);
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(830, 227);
             this.groupBox3.TabIndex = 30;
@@ -388,7 +412,7 @@
             this.groupBox4.Controls.Add(this.btnQueryStocks);
             this.groupBox4.Controls.Add(this.btnCancelStocks);
             this.groupBox4.Controls.Add(this.gridStocks);
-            this.groupBox4.Location = new System.Drawing.Point(17, 244);
+            this.groupBox4.Location = new System.Drawing.Point(5, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(606, 298);
             this.groupBox4.TabIndex = 31;
@@ -405,7 +429,7 @@
             this.groupBox5.Controls.Add(this.GridBest5Ask);
             this.groupBox5.Controls.Add(this.GridBest5Bid);
             this.groupBox5.Controls.Add(this.listTicks);
-            this.groupBox5.Location = new System.Drawing.Point(639, 244);
+            this.groupBox5.Location = new System.Drawing.Point(6, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(821, 298);
             this.groupBox5.TabIndex = 32;
@@ -419,9 +443,9 @@
             this.groupBox6.Controls.Add(this.btnSendStockSocketAlter);
             this.groupBox6.Controls.Add(this.txtCancelSeqNo);
             this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Location = new System.Drawing.Point(17, 634);
+            this.groupBox6.Location = new System.Drawing.Point(17, 335);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(608, 42);
+            this.groupBox6.Size = new System.Drawing.Size(612, 42);
             this.groupBox6.TabIndex = 34;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "證券刪單";
@@ -481,9 +505,9 @@
             this.groupBox7.Controls.Add(this.label5);
             this.groupBox7.Controls.Add(this.label9);
             this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Location = new System.Drawing.Point(17, 548);
+            this.groupBox7.Location = new System.Drawing.Point(12, 249);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(608, 80);
+            this.groupBox7.Size = new System.Drawing.Size(617, 80);
             this.groupBox7.TabIndex = 33;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "證券新單";
@@ -587,9 +611,9 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.btnSocketOrderHistoryReport);
-            this.groupBox8.Location = new System.Drawing.Point(17, 682);
+            this.groupBox8.Location = new System.Drawing.Point(17, 383);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(608, 42);
+            this.groupBox8.Size = new System.Drawing.Size(612, 42);
             this.groupBox8.TabIndex = 35;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "今日下單紀錄查詢";
@@ -607,7 +631,7 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.listMessage);
-            this.groupBox9.Location = new System.Drawing.Point(639, 548);
+            this.groupBox9.Location = new System.Drawing.Point(635, 335);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(821, 176);
             this.groupBox9.TabIndex = 36;
@@ -629,166 +653,377 @@
             this.listMessage.Size = new System.Drawing.Size(804, 148);
             this.listMessage.TabIndex = 13;
             // 
-            // button1
+            // groupBox10
             // 
-            this.button1.Location = new System.Drawing.Point(25, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "智慧單";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.groupBox10.Controls.Add(this.buttonClearKlineData);
+            this.groupBox10.Controls.Add(this.boxOutType_ByDate);
+            this.groupBox10.Controls.Add(this.boxKLine_ByDate);
+            this.groupBox10.Controls.Add(this.txtKLine_ByDate);
+            this.groupBox10.Controls.Add(this.txtMinuteNumber);
+            this.groupBox10.Controls.Add(this.label59);
+            this.groupBox10.Controls.Add(this.label47);
+            this.groupBox10.Controls.Add(this.label46);
+            this.groupBox10.Controls.Add(this.btnKLineAMByDate);
+            this.groupBox10.Controls.Add(this.txtEndDate);
+            this.groupBox10.Controls.Add(this.txtStartDate);
+            this.groupBox10.Controls.Add(this.listKLine);
+            this.groupBox10.Location = new System.Drawing.Point(7, 431);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(622, 277);
+            this.groupBox10.TabIndex = 37;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "歷史K線";
             // 
-            // SMAbox
+            // buttonClearKlineData
             // 
-            this.SMAbox.Controls.Add(this.richTextBoxSMA);
-            this.SMAbox.Controls.Add(this.buttonCalculateSMA);
-            this.SMAbox.Controls.Add(this.textBoxSMAperiod);
-            this.SMAbox.Controls.Add(this.textBoxSMAStockNo);
-            this.SMAbox.Location = new System.Drawing.Point(17, 744);
-            this.SMAbox.Name = "SMAbox";
-            this.SMAbox.Size = new System.Drawing.Size(608, 256);
-            this.SMAbox.TabIndex = 38;
-            this.SMAbox.TabStop = false;
-            this.SMAbox.Text = "簡單移動平均線計算";
+            this.buttonClearKlineData.Location = new System.Drawing.Point(269, 77);
+            this.buttonClearKlineData.Name = "buttonClearKlineData";
+            this.buttonClearKlineData.Size = new System.Drawing.Size(128, 23);
+            this.buttonClearKlineData.TabIndex = 38;
+            this.buttonClearKlineData.Text = "手動清除K線資料";
+            this.buttonClearKlineData.UseVisualStyleBackColor = true;
+            this.buttonClearKlineData.Click += new System.EventHandler(this.buttonClearKlineData_Click);
+            // 
+            // boxOutType_ByDate
+            // 
+            this.boxOutType_ByDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxOutType_ByDate.FormattingEnabled = true;
+            this.boxOutType_ByDate.Items.AddRange(new object[] {
+            "0 = 舊版輸出格式",
+            "1 = 新版輸出格式"});
+            this.boxOutType_ByDate.Location = new System.Drawing.Point(88, 48);
+            this.boxOutType_ByDate.Name = "boxOutType_ByDate";
+            this.boxOutType_ByDate.Size = new System.Drawing.Size(198, 20);
+            this.boxOutType_ByDate.TabIndex = 34;
+            // 
+            // boxKLine_ByDate
+            // 
+            this.boxKLine_ByDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxKLine_ByDate.FormattingEnabled = true;
+            this.boxKLine_ByDate.Items.AddRange(new object[] {
+            "0 = 分鐘線",
+            "1(無)",
+            "2(無)",
+            "3(無)",
+            "4 = 日線",
+            "5 = 週線",
+            "6 = 月線"});
+            this.boxKLine_ByDate.Location = new System.Drawing.Point(88, 18);
+            this.boxKLine_ByDate.Name = "boxKLine_ByDate";
+            this.boxKLine_ByDate.Size = new System.Drawing.Size(198, 20);
+            this.boxKLine_ByDate.TabIndex = 33;
+            // 
+            // txtKLine_ByDate
+            // 
+            this.txtKLine_ByDate.Location = new System.Drawing.Point(19, 44);
+            this.txtKLine_ByDate.Name = "txtKLine_ByDate";
+            this.txtKLine_ByDate.Size = new System.Drawing.Size(63, 22);
+            this.txtKLine_ByDate.TabIndex = 32;
+            this.txtKLine_ByDate.Text = "6005";
+            // 
+            // txtMinuteNumber
+            // 
+            this.txtMinuteNumber.Location = new System.Drawing.Point(295, 44);
+            this.txtMinuteNumber.Name = "txtMinuteNumber";
+            this.txtMinuteNumber.Size = new System.Drawing.Size(70, 22);
+            this.txtMinuteNumber.TabIndex = 31;
+            this.txtMinuteNumber.Text = "5";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(292, 18);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(140, 12);
+            this.label59.TabIndex = 30;
+            this.label59.Text = "MinuteNumber(指定幾分K)";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(438, 48);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(45, 12);
+            this.label47.TabIndex = 29;
+            this.label47.Text = "EndDate";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(438, 18);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(47, 12);
+            this.label46.TabIndex = 28;
+            this.label46.Text = "StartDate";
+            // 
+            // btnKLineAMByDate
+            // 
+            this.btnKLineAMByDate.Location = new System.Drawing.Point(403, 77);
+            this.btnKLineAMByDate.Name = "btnKLineAMByDate";
+            this.btnKLineAMByDate.Size = new System.Drawing.Size(205, 23);
+            this.btnKLineAMByDate.TabIndex = 27;
+            this.btnKLineAMByDate.Text = "SKQuoteLib_ReqKLineAMByDate";
+            this.btnKLineAMByDate.UseVisualStyleBackColor = true;
+            this.btnKLineAMByDate.Click += new System.EventHandler(this.btnKLineAMByDate_Click);
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.Location = new System.Drawing.Point(504, 45);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(100, 22);
+            this.txtEndDate.TabIndex = 26;
+            this.txtEndDate.Text = "20260226";
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.Location = new System.Drawing.Point(504, 12);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(100, 22);
+            this.txtStartDate.TabIndex = 25;
+            this.txtStartDate.Text = "20260223";
+            // 
+            // listKLine
+            // 
+            this.listKLine.Font = new System.Drawing.Font("新細明體", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.listKLine.FormattingEnabled = true;
+            this.listKLine.ItemHeight = 17;
+            this.listKLine.Location = new System.Drawing.Point(6, 106);
+            this.listKLine.Name = "listKLine";
+            this.listKLine.Size = new System.Drawing.Size(602, 157);
+            this.listKLine.TabIndex = 24;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.richTextBoxSMA);
+            this.groupBox11.Controls.Add(this.buttonCalculateSMA);
+            this.groupBox11.Controls.Add(this.textBoxSMAperiod);
+            this.groupBox11.Controls.Add(this.label11);
+            this.groupBox11.Controls.Add(this.textBoxSMAStockNo);
+            this.groupBox11.Controls.Add(this.label7);
+            this.groupBox11.Location = new System.Drawing.Point(635, 517);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(454, 203);
+            this.groupBox11.TabIndex = 38;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "簡單移動平均線計算";
             // 
             // richTextBoxSMA
             // 
-            this.richTextBoxSMA.Location = new System.Drawing.Point(8, 49);
+            this.richTextBoxSMA.Location = new System.Drawing.Point(8, 71);
             this.richTextBoxSMA.Name = "richTextBoxSMA";
-            this.richTextBoxSMA.Size = new System.Drawing.Size(221, 201);
-            this.richTextBoxSMA.TabIndex = 3;
+            this.richTextBoxSMA.Size = new System.Drawing.Size(425, 120);
+            this.richTextBoxSMA.TabIndex = 37;
             this.richTextBoxSMA.Text = "";
             // 
             // buttonCalculateSMA
             // 
-            this.buttonCalculateSMA.Location = new System.Drawing.Point(233, 21);
+            this.buttonCalculateSMA.Location = new System.Drawing.Point(172, 41);
             this.buttonCalculateSMA.Name = "buttonCalculateSMA";
-            this.buttonCalculateSMA.Size = new System.Drawing.Size(75, 23);
-            this.buttonCalculateSMA.TabIndex = 2;
-            this.buttonCalculateSMA.Text = "計算";
+            this.buttonCalculateSMA.Size = new System.Drawing.Size(205, 23);
+            this.buttonCalculateSMA.TabIndex = 36;
+            this.buttonCalculateSMA.Text = "CalculateSMA";
             this.buttonCalculateSMA.UseVisualStyleBackColor = true;
             this.buttonCalculateSMA.Click += new System.EventHandler(this.buttonCalculateSMA_Click);
             // 
             // textBoxSMAperiod
             // 
-            this.textBoxSMAperiod.Location = new System.Drawing.Point(114, 21);
+            this.textBoxSMAperiod.Location = new System.Drawing.Point(87, 43);
             this.textBoxSMAperiod.Name = "textBoxSMAperiod";
-            this.textBoxSMAperiod.Size = new System.Drawing.Size(100, 22);
-            this.textBoxSMAperiod.TabIndex = 1;
+            this.textBoxSMAperiod.Size = new System.Drawing.Size(70, 22);
+            this.textBoxSMAperiod.TabIndex = 35;
+            this.textBoxSMAperiod.Text = "5";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(85, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 12);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "指定幾日均線";
             // 
             // textBoxSMAStockNo
             // 
-            this.textBoxSMAStockNo.Location = new System.Drawing.Point(8, 21);
+            this.textBoxSMAStockNo.Location = new System.Drawing.Point(8, 43);
             this.textBoxSMAStockNo.Name = "textBoxSMAStockNo";
-            this.textBoxSMAStockNo.Size = new System.Drawing.Size(100, 22);
-            this.textBoxSMAStockNo.TabIndex = 0;
+            this.textBoxSMAStockNo.Size = new System.Drawing.Size(70, 22);
+            this.textBoxSMAStockNo.TabIndex = 33;
+            this.textBoxSMAStockNo.Text = "6005";
             // 
-            // groupBox10
+            // label7
             // 
-            this.groupBox10.Controls.Add(this.richTextBox2);
-            this.groupBox10.Controls.Add(this.listKLine);
-            this.groupBox10.Controls.Add(this.btnKLineAMByDate);
-            this.groupBox10.Controls.Add(this.boxOutType_ByDate);
-            this.groupBox10.Controls.Add(this.boxKLine_ByDate);
-            this.groupBox10.Controls.Add(this.txtEndDate);
-            this.groupBox10.Controls.Add(this.txtStartDate);
-            this.groupBox10.Controls.Add(this.txtMinuteNumber);
-            this.groupBox10.Controls.Add(this.txtKLine_ByDate);
-            this.groupBox10.Location = new System.Drawing.Point(662, 744);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(779, 344);
-            this.groupBox10.TabIndex = 41;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "歷史K線";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "商品代號";
             // 
-            // richTextBox2
+            // tabControl1
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(477, 195);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(296, 137);
-            this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(631, 2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(961, 327);
+            this.tabControl1.TabIndex = 39;
             // 
-            // listKLine
+            // tabPage1
             // 
-            this.listKLine.FormattingEnabled = true;
-            this.listKLine.ItemHeight = 12;
-            this.listKLine.Location = new System.Drawing.Point(9, 195);
-            this.listKLine.Name = "listKLine";
-            this.listKLine.Size = new System.Drawing.Size(451, 136);
-            this.listKLine.TabIndex = 7;
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(953, 301);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "即時報價";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnKLineAMByDate
+            // tabPage2
             // 
-            this.btnKLineAMByDate.Location = new System.Drawing.Point(453, 129);
-            this.btnKLineAMByDate.Name = "btnKLineAMByDate";
-            this.btnKLineAMByDate.Size = new System.Drawing.Size(75, 23);
-            this.btnKLineAMByDate.TabIndex = 6;
-            this.btnKLineAMByDate.Text = "KLineAMByDate";
-            this.btnKLineAMByDate.UseVisualStyleBackColor = true;
-            this.btnKLineAMByDate.Click += new System.EventHandler(this.btnKLineAMByDate_Click);
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(953, 301);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Ticks跟5檔";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // boxOutType_ByDate
+            // tabPage3
             // 
-            this.boxOutType_ByDate.FormattingEnabled = true;
-            this.boxOutType_ByDate.Location = new System.Drawing.Point(175, 103);
-            this.boxOutType_ByDate.Name = "boxOutType_ByDate";
-            this.boxOutType_ByDate.Size = new System.Drawing.Size(121, 20);
-            this.boxOutType_ByDate.TabIndex = 5;
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(953, 301);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "商品檔查詢";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // boxKLine_ByDate
+            // groupBox12
             // 
-            this.boxKLine_ByDate.FormattingEnabled = true;
-            this.boxKLine_ByDate.Location = new System.Drawing.Point(175, 31);
-            this.boxKLine_ByDate.Name = "boxKLine_ByDate";
-            this.boxKLine_ByDate.Size = new System.Drawing.Size(121, 20);
-            this.boxKLine_ByDate.TabIndex = 4;
+            this.groupBox12.Controls.Add(this.richTextBoxBackTesting);
+            this.groupBox12.Controls.Add(this.buttonBackTesting);
+            this.groupBox12.Controls.Add(this.label15);
+            this.groupBox12.Controls.Add(this.comboBoxTradingStrategy);
+            this.groupBox12.Controls.Add(this.label13);
+            this.groupBox12.Controls.Add(this.label14);
+            this.groupBox12.Controls.Add(this.textBoxBTEndDate);
+            this.groupBox12.Controls.Add(this.textBoxBTStartDate);
+            this.groupBox12.Controls.Add(this.textBoxBTStockNo);
+            this.groupBox12.Controls.Add(this.label12);
+            this.groupBox12.Location = new System.Drawing.Point(7, 726);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(1082, 191);
+            this.groupBox12.TabIndex = 40;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "回測";
             // 
-            // txtEndDate
+            // richTextBoxBackTesting
             // 
-            this.txtEndDate.Location = new System.Drawing.Point(453, 101);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.Size = new System.Drawing.Size(100, 22);
-            this.txtEndDate.TabIndex = 3;
+            this.richTextBoxBackTesting.Location = new System.Drawing.Point(6, 68);
+            this.richTextBoxBackTesting.Name = "richTextBoxBackTesting";
+            this.richTextBoxBackTesting.Size = new System.Drawing.Size(1070, 120);
+            this.richTextBoxBackTesting.TabIndex = 43;
+            this.richTextBoxBackTesting.Text = "";
             // 
-            // txtStartDate
+            // buttonBackTesting
             // 
-            this.txtStartDate.Location = new System.Drawing.Point(453, 29);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.Size = new System.Drawing.Size(100, 22);
-            this.txtStartDate.TabIndex = 2;
+            this.buttonBackTesting.Location = new System.Drawing.Point(499, 39);
+            this.buttonBackTesting.Name = "buttonBackTesting";
+            this.buttonBackTesting.Size = new System.Drawing.Size(105, 23);
+            this.buttonBackTesting.TabIndex = 42;
+            this.buttonBackTesting.Text = "開始回測";
+            this.buttonBackTesting.UseVisualStyleBackColor = true;
+            this.buttonBackTesting.Click += new System.EventHandler(this.buttonBackTesting_Click);
             // 
-            // txtMinuteNumber
+            // label15
             // 
-            this.txtMinuteNumber.Location = new System.Drawing.Point(357, 57);
-            this.txtMinuteNumber.Name = "txtMinuteNumber";
-            this.txtMinuteNumber.Size = new System.Drawing.Size(65, 22);
-            this.txtMinuteNumber.TabIndex = 1;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(267, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "交易策略";
             // 
-            // txtKLine_ByDate
+            // comboBoxTradingStrategy
             // 
-            this.txtKLine_ByDate.Location = new System.Drawing.Point(19, 72);
-            this.txtKLine_ByDate.Name = "txtKLine_ByDate";
-            this.txtKLine_ByDate.Size = new System.Drawing.Size(78, 22);
-            this.txtKLine_ByDate.TabIndex = 0;
+            this.comboBoxTradingStrategy.FormattingEnabled = true;
+            this.comboBoxTradingStrategy.Items.AddRange(new object[] {
+            "價格區間策略"});
+            this.comboBoxTradingStrategy.Location = new System.Drawing.Point(263, 40);
+            this.comboBoxTradingStrategy.Name = "comboBoxTradingStrategy";
+            this.comboBoxTradingStrategy.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxTradingStrategy.TabIndex = 40;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(86, 43);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 12);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "EndDate";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(86, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "StartDate";
+            // 
+            // textBoxBTEndDate
+            // 
+            this.textBoxBTEndDate.Location = new System.Drawing.Point(152, 40);
+            this.textBoxBTEndDate.Name = "textBoxBTEndDate";
+            this.textBoxBTEndDate.Size = new System.Drawing.Size(100, 22);
+            this.textBoxBTEndDate.TabIndex = 37;
+            this.textBoxBTEndDate.Text = "2026/2/26 13:30:00";
+            // 
+            // textBoxBTStartDate
+            // 
+            this.textBoxBTStartDate.Location = new System.Drawing.Point(152, 12);
+            this.textBoxBTStartDate.Name = "textBoxBTStartDate";
+            this.textBoxBTStartDate.Size = new System.Drawing.Size(100, 22);
+            this.textBoxBTStartDate.TabIndex = 36;
+            this.textBoxBTStartDate.Text = "2026/2/23 09:00:00";
+            // 
+            // textBoxBTStockNo
+            // 
+            this.textBoxBTStockNo.Location = new System.Drawing.Point(7, 35);
+            this.textBoxBTStockNo.Name = "textBoxBTStockNo";
+            this.textBoxBTStockNo.Size = new System.Drawing.Size(70, 22);
+            this.textBoxBTStockNo.TabIndex = 35;
+            this.textBoxBTStockNo.Text = "6005";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(5, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "商品代號";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1472, 1061);
+            this.ClientSize = new System.Drawing.Size(1478, 946);
+            this.Controls.Add(this.groupBox12);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox10);
-            this.Controls.Add(this.SMAbox);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBox1);
@@ -813,10 +1048,16 @@
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
-            this.SMAbox.ResumeLayout(false);
-            this.SMAbox.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -873,22 +1114,41 @@
         private System.Windows.Forms.ListBox listMessage;
         private System.Windows.Forms.TextBox textbstrCommentCancel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox SMAbox;
-        private System.Windows.Forms.RichTextBox richTextBoxSMA;
-        private System.Windows.Forms.Button buttonCalculateSMA;
-        private System.Windows.Forms.TextBox textBoxSMAperiod;
-        private System.Windows.Forms.TextBox textBoxSMAStockNo;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.ListBox listKLine;
-        private System.Windows.Forms.Button btnKLineAMByDate;
         private System.Windows.Forms.ComboBox boxOutType_ByDate;
         private System.Windows.Forms.ComboBox boxKLine_ByDate;
+        private System.Windows.Forms.TextBox txtKLine_ByDate;
+        private System.Windows.Forms.TextBox txtMinuteNumber;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button btnKLineAMByDate;
         private System.Windows.Forms.TextBox txtEndDate;
         private System.Windows.Forms.TextBox txtStartDate;
-        private System.Windows.Forms.TextBox txtMinuteNumber;
-        private System.Windows.Forms.TextBox txtKLine_ByDate;
+        private System.Windows.Forms.ListBox listKLine;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button buttonCalculateSMA;
+        private System.Windows.Forms.TextBox textBoxSMAperiod;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxSMAStockNo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox richTextBoxSMA;
+        private System.Windows.Forms.Button buttonClearKlineData;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.RichTextBox richTextBoxBackTesting;
+        private System.Windows.Forms.Button buttonBackTesting;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBoxTradingStrategy;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxBTEndDate;
+        private System.Windows.Forms.TextBox textBoxBTStartDate;
+        private System.Windows.Forms.TextBox textBoxBTStockNo;
+        private System.Windows.Forms.Label label12;
     }
 }
 

@@ -3,15 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static COMSample1.Form1;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace COMSample1
 {
@@ -23,102 +21,111 @@ namespace COMSample1
         private int kMarketPrice = 0;//Constants.INT32_MIN + 1;//-2147483647;
         private int m_nSimulateStock;
 
+        public static List<double?> CalculateSMA(List<double> prices, int period)
+        {
+            List<double?> sma = new List<double?>(prices.Count);
+
+            if (prices == null || prices.Count == 0 || period <= 0)
+                return sma;
+
+            double sum = 0;
+
+            for (int i = 0; i < prices.Count; i++)
+            {
+                double price = prices[i];
+                sum += price;
+
+                if (i >= period)
+                {
+                    sum -= prices[i - period];
+                }
+
+                if (i < period - 1)
+                {
+                    sma.Add(null);
+                }
+                else
+                {
+                    sma.Add(sum / period);
+                }
+            }
+
+            return sma;
+        }
+
         public class KLine
-    {
-    public string StockNo { get; set; }
-    public DateTime Time { get; set; }
-    public double Open { get; set; }
-    public double High { get; set; }
-    public double Low { get; set; }
-    public double Close { get; set; }
-    public double Volume { get; set; }
-    }
-    Dictionary<string, SortedDictionary<DateTime, KLine>> m_KLineData;
+        {
+            public string StockNo { get; set; }
+            public DateTime Time { get; set; }
+            public double Open { get; set; }
+            public double High { get; set; }
+            public double Low { get; set; }
+            public double Close { get; set; }
+            public double Volume { get; set; }
+        }
+        private static double ParsePrice(string value)
+        {
+            value = value.Trim();
 
+            double price = double.Parse(value);
 
-     private void InitFakeData(){// 假KLine資料(從2026/3/23~2026/03/27 共 5 筆，6005的日線資料)
-     
-     m_KLineData = new Dictionary<string, SortedDictionary<DateTime, KLine>>();
-     string stockNo = "6005";
-     var klineDict = new SortedDictionary<DateTime, KLine>();
-     klineDict[new DateTime(2026, 3, 23)] = new KLine
-     {
-     StockNo = stockNo,
-     Time = new DateTime(2026, 3, 23),
-     Open = 27.35,
-     High = 27.65,
-     Low = 27.1,
-     Close = 27.2,
-     Volume = 9340
-     };
-     klineDict[new DateTime(2026, 3, 24)] = new KLine
-      {
-      StockNo = stockNo,
-      Time = new DateTime(2026, 3, 24),
-      Open = 27.55,
-      High = 27.65,
-      Low = 27.1,
-      Close = 27.55,
-      Volume = 5162
-      };
-      klineDict[new DateTime(2026, 3, 25)] = new KLine
-      {
-      StockNo = stockNo,
-      Time = new DateTime(2026, 3, 25),
-      Open = 28.05,
-      High = 28.3,
-      Low = 27.8,
-      Close = 28.2,
-      Volume = 7188
-      };
-    klineDict[new DateTime(2026, 3, 26)] = new KLine
-      {
-      StockNo = stockNo,
-      Time = new DateTime(2026, 3, 26),
-      Open = 28.3,
-      High = 28.45,
-      Low = 27.95,
-      Close = 28.15,
-      Volume = 3464
-      };
-      klineDict[new DateTime(2026, 3, 27)] = new KLine
-      {
-      StockNo = stockNo,
-      Time = new DateTime(2026, 3, 27),
-      Open = 27.75,
-      High = 28.6,
-      Low = 27.75,
-      Close = 28.5,
-      Volume = 4630
-      };
-      m_KLineData[stockNo] = klineDict;
-      }
+            // 如果沒有小數點，可能是舊格式
+            if (!value.Contains("."))
+            {
+                price /= 100.0;
+            }
 
-    public static List<double?> CalculateSMA(List<double> prices, int period)
-      {
-      List<double?> sma = new List<double?>(prices.Count);
-      if (prices == null || prices.Count == 0 || period <= 0)
-      return sma;
-      double sum = 0;
-    for (int i = 0; i<prices.Count; i++)
-      {
-      double price = prices[i];
-      sum += price;
-      if (i >= period)
-      {
-      sum -= prices[i - period];
-      }
-      if (i<period - 1)
-      {
-      sma.Add(null);
-      }
-      else
-      {
-      sma.Add(sum / period);
-      }
-      }
-      return sma;
-      }
+            return price;
+        }
+        public static KLine ParseKLine(string stockNo, string data)
+        {
+            var parts = data.Split(',');
+
+            if (parts.Length < 6)
+                return null;
+
+            DateTime time;
+            double open, high, low, close, volume;
+
+            // 判斷是否含時間
+            if (parts[1].Contains(":"))
+            {
+                // 有時間 (1分鐘K)
+                string dateStr = parts[0].Trim();
+                string timeStr = parts[1].Trim();
+
+                time = DateTime.Parse($"{dateStr} {timeStr}");
+
+                open = ParsePrice(parts[2]);
+                high = ParsePrice(parts[3]);
+                low = ParsePrice(parts[4]);
+                close = ParsePrice(parts[5]);
+                volume = double.Parse(parts[6]);
+            }
+            else
+            {
+                // 日線 / 週線 / 月線
+                string dateStr = parts[0].Trim();
+                time = DateTime.Parse(dateStr);
+
+                open = ParsePrice(parts[1]);
+                high = ParsePrice(parts[2]);
+                low = ParsePrice(parts[3]);
+                close = ParsePrice(parts[4]);
+                volume = double.Parse(parts[5]);
+            }
+
+            return new KLine
+            {
+                StockNo = stockNo,
+                Time = time,
+                Open = open,
+                High = high,
+                Low = low,
+                Close = close,
+                Volume = volume
+            };
+        }
 
 
         private DataTable CreateStocksDataTable()
@@ -438,6 +445,7 @@ namespace COMSample1
         SKQuoteLib m_SKQuote;
         SKOrderLib m_SKOrder;
         string m_strUserID;
+        Dictionary<string, SortedDictionary<DateTime, KLine>> m_KLineData;
 
         void OnLoginMessage(string strUserID, string strStatusCode, string strMessage)
         {
@@ -666,20 +674,7 @@ namespace COMSample1
             Size size = TextRenderer.MeasureText(bstrStockListData, StockList.Font);
             if (StockList.HorizontalExtent < size.Width)
                 StockList.HorizontalExtent = size.Width + 200;
-        }
-        void m_SKQuoteLib_OnNotifyKLineData(string bstrStockNo, string bstrData)
-        {
-          listKLine.Items.Add("[OnNotifyKLineData]" + bstrData);
-          KLine kline = ParseKLine(bstrStockNo, bstrData);
-          if (kline == null)
-          return;
-          if (!m_KLineData.ContainsKey(bstrStockNo))
-          {
-          m_KLineData[bstrStockNo] = new SortedDictionary<DateTime, KLine>();
-          }
-          var dict = m_KLineData[bstrStockNo];
-          dict[kline.Time] = kline; // 自動覆蓋重複
-        }
+        } 
 
         void m_SKOrderLib_OnSocketOrderReport(int nSeqId, string bstrUserID, string bstrStockNo, int nSide, string bstrPrice, int nQty, string bstrClientOrderId, string bstrComment, int nStatus, string bstrCreateTime)
         {
@@ -730,7 +725,23 @@ namespace COMSample1
             }
             listMessage.Items.Add(strData);
         }
+        void m_SKQuoteLib_OnNotifyKLineData(string bstrStockNo, string bstrData)
+        {
+            listKLine.Items.Add("[OnNotifyKLineData]" + bstrData);
 
+            KLine kline = ParseKLine(bstrStockNo, bstrData);
+
+            if (kline == null)
+                return;
+
+            if (!m_KLineData.ContainsKey(bstrStockNo))
+            {
+                m_KLineData[bstrStockNo] = new SortedDictionary<DateTime, KLine>();
+            }
+            var dict = m_KLineData[bstrStockNo];
+
+            dict[kline.Time] = kline;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -738,6 +749,7 @@ namespace COMSample1
             m_SKQuote = new SKQuoteLib();
             m_SKOrder = new SKOrderLib();
 
+            m_KLineData = new Dictionary<string, SortedDictionary<DateTime, KLine>>();
 
             m_pSKCenter.OnLoginMessage += new _ISKCenterLibEvents_OnLoginMessageEventHandler(this.OnLoginMessage);
             m_SKQuote.OnConnection += new _ISKQuoteLibEvents_OnConnectionEventHandler(m_SKQuoteLib_OnConnection);
@@ -747,15 +759,13 @@ namespace COMSample1
             m_SKQuote.OnNotifyTicksLONG += new _ISKQuoteLibEvents_OnNotifyTicksLONGEventHandler(m_SKQuoteLib_OnNotifyTicks);
             m_SKQuote.OnNotifyBest5LONG += new _ISKQuoteLibEvents_OnNotifyBest5LONGEventHandler(m_SKQuoteLib_OnNotifyBest5);
             m_SKQuote.OnNotifyCommodityListWithTypeNo += new _ISKQuoteLibEvents_OnNotifyCommodityListWithTypeNoEventHandler(m_SKQuoteLib_OnNotifyCommodityListWithTypeNo);
-            m_SKQuote.OnNotifyKLineData += new _ISKQuoteLibEvents_OnNotifyKLineDataEventHandler(m_SKQuoteLib_OnNotifyKLineData);
-
 
             m_SKOrder.OnSocketOrderReport += new _ISKOrderLibEvents_OnSocketOrderReportEventHandler(m_SKOrderLib_OnSocketOrderReport);
             m_SKOrder.OnSocketOrderFailed += new _ISKOrderLibEvents_OnSocketOrderFailedEventHandler(m_SKOrderLib_OnSocketOrderFailed);
             m_SKOrder.OnSocketFulfillReport += new _ISKOrderLibEvents_OnSocketFulfillReportEventHandler(m_SKOrderLib_OnSocketFulfillReport);
             m_SKOrder.OnSocketOrderHistoryReport += new _ISKOrderLibEvents_OnSocketOrderHistoryReportEventHandler(m_SKOrderLib_OnSocketOrderHistoryReport);
 
-
+            //m_SKQuote.OnNotifyKLineData += new _ISKQuoteLibEvents_OnNotifyKLineDataEventHandler(m_SKQuoteLib_OnNotifyKLineData);
         }
 
         private void button1Login_Click(object sender, EventArgs e)
@@ -846,63 +856,8 @@ namespace COMSample1
             m_dtBest5Bid = CreateBest5AskTable();
             SetDoubleBuffered(gridStocks);
         }
-        public static KLine ParseKLine(string stockNo, string data)
-       {
-       var parts = data.Split(',');
-       if (parts.Length< 6)
-       return null;
-       DateTime time;
-       double open, high, low, close, volume;
-            // 判斷是否含時間
-       if (parts[1].Contains(":"))
-       {
-       // 有時間 (1分鐘K)
-       string dateStr = parts[0].Trim();
-       string timeStr = parts[1].Trim();
-       time = DateTime.Parse($"{dateStr} {timeStr}");
-       open = ParsePrice(parts[2]);
-       high = ParsePrice(parts[3]);
-       low = ParsePrice(parts[4]);
-       close = ParsePrice(parts[5]);
-       volume = double.Parse(parts[6]);
-       }
-       else
-       {
-       // 日線 / 週線 / 月線
-       string dateStr = parts[0].Trim();
-       time = DateTime.Parse(dateStr);
-       open = ParsePrice(parts[1]);
-       high = ParsePrice(parts[2]);
-       low = ParsePrice(parts[3]);
-       close = ParsePrice(parts[4]);
-       volume = double.Parse(parts[5]);
-       }
-            return new KLine
-       {
-       StockNo = stockNo,
-       Time = time,
-       Open = open,
-       High = high,
-       Low = low,
-       Close = close,
-       Volume = volume
-       };
-       }
-        private static double ParsePrice(string value)
-       {
-       value = value.Trim();
-       double price = double.Parse(value);
-       // 如果沒有小數點，可能是舊格式
-       if (!value.Contains("."))
-       {
-       price /= 100.0;
-       }
-       return price;
-       }
 
-
-
-private void btnTicks_Click(object sender, EventArgs e)
+        private void btnTicks_Click(object sender, EventArgs e)
         {
             short sPage;
 
@@ -1047,104 +1002,349 @@ private void btnTicks_Click(object sender, EventArgs e)
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmSmartTrade f = new FrmSmartTrade();
-            f.Show();
-        }
-
-        private void buttonCalculateSMA_Click(object sender, EventArgs e)
-        {
-            InitFakeData();
-              string stockNo = textBoxSMAStockNo.Text.Trim();
-              // 檢查商品代號
-              if (string.IsNullOrEmpty(stockNo))
-              {
-              MessageBox.Show("請輸入商品代號");
-              return;
-              }
-              // 檢查 period 是否為整數
-              if (!int.TryParse(textBoxSMAperiod.Text, out int period))
-              {
-              MessageBox.Show("請輸入正確的 SMA 週期");
-              return;
-            }
-              // 檢查 period 合法
-            if (period <= 0)
-             {
-             MessageBox.Show("SMA 週期必須大於 0");
-             return;
-             }
-             // 檢查是否有該商品資料
-             if (!m_KLineData.ContainsKey(stockNo))
-             {
-             MessageBox.Show($"沒有 {stockNo} 的K線資料");
-             return;
-             }
-            var klines = m_KLineData[stockNo];
-             if (klines == null || klines.Count == 0)
-             {
-             MessageBox.Show("K線資料為空");
-             return;
-             }
-             // 檢查資料是否足夠
-             if (klines.Count < period)
-             {
-             MessageBox.Show($"K線資料不足，目前只有 {klines.Count} 筆");
-             return;
-             }
-            // 取得收盤價
-             var closes = klines.Values.Select(x => x.Close).ToList();
-             // 計算 SMA
-             var sma = CalculateSMA(closes, period);
-             richTextBoxSMA.Clear();
-             var klineList = klines.Values.ToList();
-             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < sma.Count; i++)
-             {
-             if (sma[i] == null)
-             continue;
-             int startIndex = i - period + 1;
-             DateTime startTime = klineList[startIndex].Time;
-             DateTime endTime = klineList[i].Time;
-             double value = sma[i].Value;
-             sb.AppendLine($"{startTime:yyyy/MM/dd HH:mm} ~ {endTime:yyyy/MM/dd HH:mm} SMA({period}) = {value:F2}");
-             }
-             richTextBoxSMA.Text = sb.ToString();
-             }
-
         private void btnKLineAMByDate_Click(object sender, EventArgs e)
         {
             listKLine.Items.Clear();
-           short sKLineType = short.Parse(boxKLine_ByDate.SelectedIndex.ToString());
-           short sOutType = short.Parse(boxOutType_ByDate.SelectedIndex.ToString());
-           short sMinuteNumber;
-           if (sKLineType < 0)
-           {
-           MessageBox.Show("請選擇KLine類型");
-           return;
-           }
-            if (sOutType < 0)
-           {
-           MessageBox.Show("請選擇輸出格式類型");
-           return;
-           }
-           if (short.TryParse(txtMinuteNumber.Text, out sMinuteNumber) == false)
-           {
-           sMinuteNumber = 0;
-           }
-           m_nCode = m_SKQuote.SKQuoteLib_ReqKLineAMByDate(txtKLine_ByDate.Text.Trim(), sKLineType, sOutType, txtStartDate.Text.Trim(), txtEndDate.Text.Trim(), sMinuteNumber);
-            if (m_nCode == 0)
-           {
-           richTextBox1.AppendText("[SKQuoteLib_ReqKLineAMByDate]" + m_strUserID +
-        " 呼叫歷史K線查詢函式" + "\n");
-           }
-           else
-           {
-           richTextBox1.AppendText("[SKQuoteLib_ReqKLineAMByDate]" + m_strUserID +
-        " 呼叫歷史K線查詢函式失敗!錯誤代碼:" + m_nCode + "\n");
-           }
 
+            short sKLineType = short.Parse(boxOutType_ByDate.SelectedIndex.ToString());//short sKLineType = short.Parse(boxKLine_ByDate.SelectedIndex.ToString());
+            short sOutType = short.Parse(boxOutType_ByDate.SelectedIndex.ToString());
+            short sMinuteNumber;
+
+            if (sKLineType < 0)
+            {
+                MessageBox.Show("請選擇KLine類型");
+                return;
+            }
+            if (sOutType < 0)
+            {
+                MessageBox.Show("請選擇輸出格式類型");
+                return;
+            }
+
+            if (short.TryParse(txtMinuteNumber.Text, out sMinuteNumber) == false)
+            {
+                sMinuteNumber = 0;
+            }
+            //m_nCode = m_SKQuote.SKQuoteLib_ReqKLineAMByDate(txtKLine_ByDate.Text.Trim(), sKLineType, sOutType, txtStartDate.Text.Trim(), txtEndDate.Text.Trim(), sMinuteNumber);
+
+            if (m_nCode == 0)
+            {
+                richTextBox1.AppendText("[SKQuoteLib_ReqKLineAMByDate]" + m_strUserID + " 呼叫歷史K線查詢函式" + "\n");
+            }
+            else
+            {
+                richTextBox1.AppendText("[SKQuoteLib_ReqKLineAMByDate]" + m_strUserID + " 呼叫歷史K線查詢函式失敗!錯誤代碼:" + m_nCode + "\n");
+            }
+        }
+
+        //private void InitFakeData()// 假KLine資料(從2026/3/23~2026/03/27 共 5 筆，6005的日線資料)
+        //{
+        //    m_KLineData = new Dictionary<string, SortedDictionary<DateTime, KLine>>();
+
+        //    string stockNo = "6005";
+
+        //    var klineDict = new SortedDictionary<DateTime, KLine>();
+
+        //    klineDict[new DateTime(2026, 3, 23)] = new KLine
+        //    {
+        //        StockNo = stockNo,
+        //        Time = new DateTime(2026, 3, 23),
+        //        Open = 27.35,
+        //        High = 27.65,
+        //        Low = 27.1,
+        //        Close = 27.2,
+        //        Volume = 9340
+        //    };
+
+        //    klineDict[new DateTime(2026, 3, 24)] = new KLine
+        //    {
+        //        StockNo = stockNo,
+        //        Time = new DateTime(2026, 3, 24),
+        //        Open = 27.55,
+        //        High = 27.65,
+        //        Low = 27.1,
+        //        Close = 27.55,
+        //        Volume = 5162
+        //    };
+
+        //    klineDict[new DateTime(2026, 3, 25)] = new KLine
+        //    {
+        //        StockNo = stockNo,
+        //        Time = new DateTime(2026, 3, 25),
+        //        Open = 28.05,
+        //        High = 28.3,
+        //        Low = 27.8,
+        //        Close = 28.2,
+        //        Volume = 7188
+        //    };
+
+        //    klineDict[new DateTime(2026, 3, 26)] = new KLine
+        //    {
+        //        StockNo = stockNo,
+        //        Time = new DateTime(2026, 3, 26),
+        //        Open = 28.3,
+        //        High = 28.45,
+        //        Low = 27.95,
+        //        Close = 28.15,
+        //        Volume = 3464
+        //    };
+
+        //    klineDict[new DateTime(2026, 3, 27)] = new KLine
+        //    {
+        //        StockNo = stockNo,
+        //        Time = new DateTime(2026, 3, 27),
+        //        Open = 27.75,
+        //        High = 28.6,
+        //        Low = 27.75,
+        //        Close = 28.5,
+        //        Volume = 4630
+        //    };
+
+        //    m_KLineData[stockNo] = klineDict;
+        //}
+
+        private void buttonCalculateSMA_Click(object sender, EventArgs e)
+        {
+            //InitFakeData();
+            string stockNo = textBoxSMAStockNo.Text.Trim();
+
+            // 檢查商品代號
+            if (string.IsNullOrEmpty(stockNo))
+            {
+                MessageBox.Show("請輸入商品代號");
+                return;
+            }
+
+            // 檢查 period 是否為整數
+            if (!int.TryParse(textBoxSMAperiod.Text, out int period))
+            {
+                MessageBox.Show("請輸入正確的 SMA 週期");
+                return;
+            }
+
+            // 檢查 period 合法
+            if (period <= 0)
+            {
+                MessageBox.Show("SMA 週期必須大於 0");
+                return;
+            }
+
+            // 檢查是否有該商品資料
+            if (!m_KLineData.ContainsKey(stockNo))
+            {
+                MessageBox.Show($"沒有 {stockNo} 的K線資料");
+                return;
+            }
+
+            var klines = m_KLineData[stockNo];
+
+            if (klines == null || klines.Count == 0)
+            {
+                MessageBox.Show("K線資料為空");
+                return;
+            }
+
+            // 檢查資料是否足夠
+            if (klines.Count < period)
+            {
+                MessageBox.Show($"K線資料不足，目前只有 {klines.Count} 筆");
+                return;
+            }
+
+            // 取得收盤價
+            var closes = klines.Values.Select(x => x.Close).ToList();
+
+            // 計算 SMA
+            var sma = CalculateSMA(closes, period);
+
+            richTextBoxSMA.Clear();
+
+            var klineList = klines.Values.ToList();
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < sma.Count; i++)
+            {
+                if (sma[i] == null)
+                    continue;
+
+                int startIndex = i - period + 1;
+
+                DateTime startTime = klineList[startIndex].Time;
+                DateTime endTime = klineList[i].Time;
+
+                double value = sma[i].Value;
+
+                sb.AppendLine($"{startTime:yyyy/MM/dd HH:mm} ~ {endTime:yyyy/MM/dd HH:mm}  SMA({period}) = {value:F2}");
+            }
+
+            richTextBoxSMA.Text = sb.ToString();
+        }
+
+        private void buttonClearKlineData_Click(object sender, EventArgs e)
+        {
+            m_KLineData.Clear();
+            MessageBox.Show("已清除所有K線資料！", "提示");
+        }
+
+        private void buttonBackTesting_Click(object sender, EventArgs e)
+        {
+            string stockNo = textBoxBTStockNo.Text.Trim();
+
+            // 檢查商品代號
+            if (string.IsNullOrEmpty(stockNo))
+            {
+                MessageBox.Show("請輸入商品代號");
+                return;
+            }
+
+            DateTime startDate, EndDate;
+
+            bool success = DateTime.TryParseExact(
+                textBoxBTStartDate.Text,
+                "yyyy/M/d HH:mm:ss",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out startDate
+            );
+            if (!success)
+            {
+                MessageBox.Show("日期格式錯誤，請輸入 yyyy-MM-dd HH:mm:ss");
+            }
+
+            success = DateTime.TryParseExact(
+                textBoxBTEndDate.Text,
+                "yyyy/M/d HH:mm:ss",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out EndDate
+            );
+            if (!success)
+            {
+                MessageBox.Show("日期格式錯誤，請輸入 yyyy-MM-dd HH:mm:ss");
+            }
+
+            // 檢查是否有該商品資料
+            if (!m_KLineData.ContainsKey(stockNo))
+            {
+                MessageBox.Show($"沒有 {stockNo} 的K線資料");
+                return;
+            }
+
+            var klines = m_KLineData[stockNo];
+
+            if (klines == null || klines.Count == 0)
+            {
+                MessageBox.Show("K線資料為空");
+                return;
+            }
+
+            if (comboBoxTradingStrategy.Text == "價格區間策略") // 假設每筆5k線都做一次判斷 (商品代號:6005、期間:20260205~20260211的5日均線收盤價為28.69、如果收盤價大於28.69，則用收盤價買入；若小於則用收盤價賣出、一次交易都是一張)
+            {// 測試集為 20260223~20260226 的5分K線
+                int position = 0;              // 庫存(張)
+                double totalCost = 0;          // 總投入成本
+                double cumulativeCost = 0;     // 累計投入（不歸零）
+                double realizedPnL = 0;        // 已實現損益
+                double avgCost = 0;            // 平均成本
+
+                int i = 0;
+                int totalCount = klines.Count;
+
+                foreach (var kvp in klines)
+                {
+                    double close = kvp.Value.Close;
+                    bool isLastTick = (i == totalCount - 1);
+
+                    string action = "";
+
+                    // ===== 策略 =====
+                    if (!isLastTick)
+                    {
+                        action = close > 28.69 ? "Buy" : "Sell";
+                    }
+                    else
+                    {
+                        action = "ForceSell";
+                    }
+
+                    // ===== 交易 =====
+                    if (action == "Buy")
+                    {
+                        position += 1;
+                        totalCost += close;
+                        cumulativeCost += close;
+
+                        avgCost = totalCost / position;
+                    }
+                    else if (action == "Sell")
+                    {
+                        if (position > 0)
+                        {
+                            position -= 1;
+
+                            double pnl = close - avgCost;
+                            realizedPnL += pnl;
+
+                            totalCost -= avgCost;
+
+                            avgCost = position > 0 ? totalCost / position : 0;
+                        }
+                    }
+                    else if (action == "ForceSell")
+                    {
+                        if (position > 0)
+                        {
+                            double pnl = (close - avgCost) * position;
+                            realizedPnL += pnl;
+
+                            totalCost = 0;
+                            position = 0;
+                            avgCost = 0;
+                        }
+                    }
+
+                    // ===== 資產 =====
+                    double marketValue = position * close;
+                    double totalAsset = marketValue + realizedPnL;
+
+                    // 總報酬率
+                    double returnRate = cumulativeCost > 0
+                        ? (realizedPnL / cumulativeCost) * 100
+                        : 0;
+
+                    // ===== 顯示（台股 ×1000）=====
+                    const int contractSize = 1000;
+
+                    double costDisplay = totalCost * contractSize;
+                    double pnlDisplay = realizedPnL * contractSize;
+                    double avgCostDisplay = avgCost;
+                    double assetDisplay = totalAsset * contractSize;
+
+                    richTextBoxBackTesting.AppendText(
+                        $"{kvp.Key:yyyy/MM/dd HH:mm:ss} | " +
+                        $"Price:{close:F2} | " +
+                        $"Action:{action} | " +
+                        $"庫存:{position}張 | " +
+                        $"總成本:${costDisplay:N0} | " +
+                        $"資產:${assetDisplay:N0} | " +
+                        $"已實現損益:${pnlDisplay:N0} | " +
+                        $"平均成本:{avgCostDisplay:F2} | " +
+                        $"總報酬率:{returnRate:F2}%\n"
+                    );
+
+                    // ===== 結尾標記 =====
+                    if (isLastTick)
+                    {
+                        richTextBoxBackTesting.AppendText("=== 回測結束（已全數平倉）===\n");
+                    }
+
+                    i++;
+                }
+            }
+            else
+            { 
+                // 其他策略
+            }
 
         }
     }
