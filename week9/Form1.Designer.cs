@@ -695,7 +695,7 @@
             this.groupBox10.Controls.Add(this.txtStartDate);
             this.groupBox10.Controls.Add(this.txtMinuteNumber);
             this.groupBox10.Controls.Add(this.txtKLine_ByDate);
-            this.groupBox10.Location = new System.Drawing.Point(658, 744);
+            this.groupBox10.Location = new System.Drawing.Point(662, 744);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(608, 344);
             this.groupBox10.TabIndex = 41;
