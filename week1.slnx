@@ -3,9 +3,6 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="../../../Downloads/week8/week8/week8.csproj" Id="48122cd6-4266-4a88-83b8-64531ffe87b0">
-    <Platform Solution="*|x64" Project="x64" />
-  </Project>
   <Project Path="week1/week1.csproj" Id="a3f725fd-7823-4d1f-ae8d-f1f55f54c979">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
@@ -22,6 +19,9 @@
     <Platform Solution="*|x64" Project="x64" />
   </Project>
   <Project Path="week5/week5.csproj" Id="d7a3aaec-c233-408f-a68f-039dcdbf52ac">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="week8/week8.csproj" Id="48122cd6-4266-4a88-83b8-64531ffe87b0">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
 </Solution>
