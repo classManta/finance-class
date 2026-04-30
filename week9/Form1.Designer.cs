@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1LoginID = new System.Windows.Forms.TextBox();
@@ -86,6 +86,16 @@
             this.buttonCalculateSMA = new System.Windows.Forms.Button();
             this.textBoxSMAperiod = new System.Windows.Forms.TextBox();
             this.textBoxSMAStockNo = new System.Windows.Forms.TextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.listKLine = new System.Windows.Forms.ListBox();
+            this.btnKLineAMByDate = new System.Windows.Forms.Button();
+            this.boxOutType_ByDate = new System.Windows.Forms.ComboBox();
+            this.boxKLine_ByDate = new System.Windows.Forms.ComboBox();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtMinuteNumber = new System.Windows.Forms.TextBox();
+            this.txtKLine_ByDate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridBest5Bid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridBest5Ask)).BeginInit();
@@ -99,6 +109,7 @@
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.SMAbox.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -195,21 +206,21 @@
             this.gridStocks.AllowUserToAddRows = false;
             this.gridStocks.AllowUserToDeleteRows = false;
             this.gridStocks.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridStocks.Location = new System.Drawing.Point(5, 49);
             this.gridStocks.Name = "gridStocks";
             this.gridStocks.ReadOnly = true;
             this.gridStocks.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.gridStocks.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gridStocks.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridStocks.RowTemplate.Height = 24;
             this.gridStocks.Size = new System.Drawing.Size(595, 219);
             this.gridStocks.TabIndex = 11;
@@ -673,12 +684,101 @@
             this.textBoxSMAStockNo.Size = new System.Drawing.Size(100, 22);
             this.textBoxSMAStockNo.TabIndex = 0;
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.richTextBox2);
+            this.groupBox10.Controls.Add(this.listKLine);
+            this.groupBox10.Controls.Add(this.btnKLineAMByDate);
+            this.groupBox10.Controls.Add(this.boxOutType_ByDate);
+            this.groupBox10.Controls.Add(this.boxKLine_ByDate);
+            this.groupBox10.Controls.Add(this.txtEndDate);
+            this.groupBox10.Controls.Add(this.txtStartDate);
+            this.groupBox10.Controls.Add(this.txtMinuteNumber);
+            this.groupBox10.Controls.Add(this.txtKLine_ByDate);
+            this.groupBox10.Location = new System.Drawing.Point(658, 744);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(608, 344);
+            this.groupBox10.TabIndex = 41;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "歷史K線";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(477, 195);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(123, 137);
+            this.richTextBox2.TabIndex = 8;
+            this.richTextBox2.Text = "";
+            // 
+            // listKLine
+            // 
+            this.listKLine.FormattingEnabled = true;
+            this.listKLine.ItemHeight = 12;
+            this.listKLine.Location = new System.Drawing.Point(9, 195);
+            this.listKLine.Name = "listKLine";
+            this.listKLine.Size = new System.Drawing.Size(451, 136);
+            this.listKLine.TabIndex = 7;
+            // 
+            // btnKLineAMByDate
+            // 
+            this.btnKLineAMByDate.Location = new System.Drawing.Point(453, 129);
+            this.btnKLineAMByDate.Name = "btnKLineAMByDate";
+            this.btnKLineAMByDate.Size = new System.Drawing.Size(75, 23);
+            this.btnKLineAMByDate.TabIndex = 6;
+            this.btnKLineAMByDate.Text = "button1";
+            this.btnKLineAMByDate.UseVisualStyleBackColor = true;
+            // 
+            // boxOutType_ByDate
+            // 
+            this.boxOutType_ByDate.FormattingEnabled = true;
+            this.boxOutType_ByDate.Location = new System.Drawing.Point(175, 103);
+            this.boxOutType_ByDate.Name = "boxOutType_ByDate";
+            this.boxOutType_ByDate.Size = new System.Drawing.Size(121, 20);
+            this.boxOutType_ByDate.TabIndex = 5;
+            // 
+            // boxKLine_ByDate
+            // 
+            this.boxKLine_ByDate.FormattingEnabled = true;
+            this.boxKLine_ByDate.Location = new System.Drawing.Point(175, 31);
+            this.boxKLine_ByDate.Name = "boxKLine_ByDate";
+            this.boxKLine_ByDate.Size = new System.Drawing.Size(121, 20);
+            this.boxKLine_ByDate.TabIndex = 4;
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.Location = new System.Drawing.Point(453, 101);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(100, 22);
+            this.txtEndDate.TabIndex = 3;
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.Location = new System.Drawing.Point(453, 29);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(100, 22);
+            this.txtStartDate.TabIndex = 2;
+            // 
+            // txtMinuteNumber
+            // 
+            this.txtMinuteNumber.Location = new System.Drawing.Point(357, 57);
+            this.txtMinuteNumber.Name = "txtMinuteNumber";
+            this.txtMinuteNumber.Size = new System.Drawing.Size(65, 22);
+            this.txtMinuteNumber.TabIndex = 1;
+            // 
+            // txtKLine_ByDate
+            // 
+            this.txtKLine_ByDate.Location = new System.Drawing.Point(19, 72);
+            this.txtKLine_ByDate.Name = "txtKLine_ByDate";
+            this.txtKLine_ByDate.Size = new System.Drawing.Size(78, 22);
+            this.txtKLine_ByDate.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1472, 1061);
+            this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.SMAbox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox9);
@@ -714,6 +814,8 @@
             this.groupBox9.ResumeLayout(false);
             this.SMAbox.ResumeLayout(false);
             this.SMAbox.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -776,6 +878,16 @@
         private System.Windows.Forms.Button buttonCalculateSMA;
         private System.Windows.Forms.TextBox textBoxSMAperiod;
         private System.Windows.Forms.TextBox textBoxSMAStockNo;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ListBox listKLine;
+        private System.Windows.Forms.Button btnKLineAMByDate;
+        private System.Windows.Forms.ComboBox boxOutType_ByDate;
+        private System.Windows.Forms.ComboBox boxKLine_ByDate;
+        private System.Windows.Forms.TextBox txtEndDate;
+        private System.Windows.Forms.TextBox txtStartDate;
+        private System.Windows.Forms.TextBox txtMinuteNumber;
+        private System.Windows.Forms.TextBox txtKLine_ByDate;
     }
 }
 
