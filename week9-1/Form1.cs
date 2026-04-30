@@ -765,7 +765,7 @@ namespace COMSample1
             m_SKOrder.OnSocketFulfillReport += new _ISKOrderLibEvents_OnSocketFulfillReportEventHandler(m_SKOrderLib_OnSocketFulfillReport);
             m_SKOrder.OnSocketOrderHistoryReport += new _ISKOrderLibEvents_OnSocketOrderHistoryReportEventHandler(m_SKOrderLib_OnSocketOrderHistoryReport);
 
-            //m_SKQuote.OnNotifyKLineData += new _ISKQuoteLibEvents_OnNotifyKLineDataEventHandler(m_SKQuoteLib_OnNotifyKLineData);
+            m_SKQuote.OnNotifyKLineData += new _ISKQuoteLibEvents_OnNotifyKLineDataEventHandler(m_SKQuoteLib_OnNotifyKLineData);
         }
 
         private void button1Login_Click(object sender, EventArgs e)
@@ -1006,7 +1006,8 @@ namespace COMSample1
         {
             listKLine.Items.Clear();
 
-            short sKLineType = short.Parse(boxOutType_ByDate.SelectedIndex.ToString());//short sKLineType = short.Parse(boxKLine_ByDate.SelectedIndex.ToString());
+            
+            short sKLineType = short.Parse(boxKLine_ByDate.SelectedIndex.ToString());
             short sOutType = short.Parse(boxOutType_ByDate.SelectedIndex.ToString());
             short sMinuteNumber;
 
@@ -1025,7 +1026,7 @@ namespace COMSample1
             {
                 sMinuteNumber = 0;
             }
-            //m_nCode = m_SKQuote.SKQuoteLib_ReqKLineAMByDate(txtKLine_ByDate.Text.Trim(), sKLineType, sOutType, txtStartDate.Text.Trim(), txtEndDate.Text.Trim(), sMinuteNumber);
+            m_nCode = m_SKQuote.SKQuoteLib_ReqKLineAMByDate(txtKLine_ByDate.Text.Trim(), sKLineType, sOutType, txtStartDate.Text.Trim(), txtEndDate.Text.Trim(), sMinuteNumber);
 
             if (m_nCode == 0)
             {
@@ -1037,71 +1038,71 @@ namespace COMSample1
             }
         }
 
-        //private void InitFakeData()// 假KLine資料(從2026/3/23~2026/03/27 共 5 筆，6005的日線資料)
-        //{
-        //    m_KLineData = new Dictionary<string, SortedDictionary<DateTime, KLine>>();
+        private void InitFakeData()// 假KLine資料(從2026/3/23~2026/03/27 共 5 筆，6005的日線資料)
+        {
+            m_KLineData = new Dictionary<string, SortedDictionary<DateTime, KLine>>();
 
-        //    string stockNo = "6005";
+            string stockNo = "6005";
 
-        //    var klineDict = new SortedDictionary<DateTime, KLine>();
+            var klineDict = new SortedDictionary<DateTime, KLine>();
 
-        //    klineDict[new DateTime(2026, 3, 23)] = new KLine
-        //    {
-        //        StockNo = stockNo,
-        //        Time = new DateTime(2026, 3, 23),
-        //        Open = 27.35,
-        //        High = 27.65,
-        //        Low = 27.1,
-        //        Close = 27.2,
-        //        Volume = 9340
-        //    };
+            klineDict[new DateTime(2026, 3, 23)] = new KLine
+            {
+                StockNo = stockNo,
+                Time = new DateTime(2026, 3, 23),
+                Open = 27.35,
+                High = 27.65,
+                Low = 27.1,
+                Close = 27.2,
+                Volume = 9340
+            };
 
-        //    klineDict[new DateTime(2026, 3, 24)] = new KLine
-        //    {
-        //        StockNo = stockNo,
-        //        Time = new DateTime(2026, 3, 24),
-        //        Open = 27.55,
-        //        High = 27.65,
-        //        Low = 27.1,
-        //        Close = 27.55,
-        //        Volume = 5162
-        //    };
+            klineDict[new DateTime(2026, 3, 24)] = new KLine
+            {
+                StockNo = stockNo,
+                Time = new DateTime(2026, 3, 24),
+                Open = 27.55,
+                High = 27.65,
+                Low = 27.1,
+                Close = 27.55,
+                Volume = 5162
+            };
 
-        //    klineDict[new DateTime(2026, 3, 25)] = new KLine
-        //    {
-        //        StockNo = stockNo,
-        //        Time = new DateTime(2026, 3, 25),
-        //        Open = 28.05,
-        //        High = 28.3,
-        //        Low = 27.8,
-        //        Close = 28.2,
-        //        Volume = 7188
-        //    };
+            klineDict[new DateTime(2026, 3, 25)] = new KLine
+            {
+                StockNo = stockNo,
+                Time = new DateTime(2026, 3, 25),
+                Open = 28.05,
+                High = 28.3,
+                Low = 27.8,
+                Close = 28.2,
+                Volume = 7188
+            };
 
-        //    klineDict[new DateTime(2026, 3, 26)] = new KLine
-        //    {
-        //        StockNo = stockNo,
-        //        Time = new DateTime(2026, 3, 26),
-        //        Open = 28.3,
-        //        High = 28.45,
-        //        Low = 27.95,
-        //        Close = 28.15,
-        //        Volume = 3464
-        //    };
+            klineDict[new DateTime(2026, 3, 26)] = new KLine
+            {
+                StockNo = stockNo,
+                Time = new DateTime(2026, 3, 26),
+                Open = 28.3,
+                High = 28.45,
+                Low = 27.95,
+                Close = 28.15,
+                Volume = 3464
+            };
 
-        //    klineDict[new DateTime(2026, 3, 27)] = new KLine
-        //    {
-        //        StockNo = stockNo,
-        //        Time = new DateTime(2026, 3, 27),
-        //        Open = 27.75,
-        //        High = 28.6,
-        //        Low = 27.75,
-        //        Close = 28.5,
-        //        Volume = 4630
-        //    };
+            klineDict[new DateTime(2026, 3, 27)] = new KLine
+            {
+                StockNo = stockNo,
+                Time = new DateTime(2026, 3, 27),
+                Open = 27.75,
+                High = 28.6,
+                Low = 27.75,
+                Close = 28.5,
+                Volume = 4630
+            };
 
-        //    m_KLineData[stockNo] = klineDict;
-        //}
+            m_KLineData[stockNo] = klineDict;
+        }
 
         private void buttonCalculateSMA_Click(object sender, EventArgs e)
         {
