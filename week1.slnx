@@ -6,6 +6,9 @@
   <Project Path="week1/week1.csproj" Id="a3f725fd-7823-4d1f-ae8d-f1f55f54c979">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
+  <Project Path="week10/week10.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
   <Project Path="week2/week2.csproj" Id="a229c3b2-fe6b-4f73-8cab-2566f64f44d9">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
@@ -24,7 +27,7 @@
   <Project Path="week8/week8.csproj" Id="48122cd6-4266-4a88-83b8-64531ffe87b0">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
-  <Project Path="week9-1/week9-1.csproj">
+  <Project Path="week9-1/week9-1.csproj" Id="54a01df4-1d21-4e1a-b287-844cdfce9ebc">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
   <Project Path="week9/week9.csproj" Id="fda43221-ac92-425f-91ab-db4f4f7c7d9d">
