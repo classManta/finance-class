@@ -1,0 +1,1316 @@
+﻿namespace COMSample1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 設計工具所需的變數。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清除任何使用中的資源。
+        /// </summary>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 設計工具產生的程式碼
+
+        /// <summary>
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1LoginID = new System.Windows.Forms.TextBox();
+            this.textBox2Password = new System.Windows.Forms.TextBox();
+            this.button1Login = new System.Windows.Forms.Button();
+            this.buttonEnterMonitorLONG = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtStocks = new System.Windows.Forms.TextBox();
+            this.btnQueryStocks = new System.Windows.Forms.Button();
+            this.btnCancelStocks = new System.Windows.Forms.Button();
+            this.gridStocks = new System.Windows.Forms.DataGridView();
+            this.GridBest5Bid = new System.Windows.Forms.DataGridView();
+            this.GridBest5Ask = new System.Windows.Forms.DataGridView();
+            this.listTicks = new System.Windows.Forms.ListBox();
+            this.btnTicks = new System.Windows.Forms.Button();
+            this.txtTick = new System.Windows.Forms.TextBox();
+            this.btnTickStop = new System.Windows.Forms.Button();
+            this.txtTickPageNo = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.RequestStockListBtn = new System.Windows.Forms.Button();
+            this.MarketNo_txt = new System.Windows.Forms.TextBox();
+            this.StockList = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textbstrCommentCancel = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSendStockSocketAlter = new System.Windows.Forms.Button();
+            this.txtCancelSeqNo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textbstrCommentOrder = new System.Windows.Forms.TextBox();
+            this.btnSendStockSocketOrder = new System.Windows.Forms.Button();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.boxBidAsk = new System.Windows.Forms.ComboBox();
+            this.txtStockNo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnSocketOrderHistoryReport = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.listMessage = new System.Windows.Forms.ListBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.buttonClearKlineData = new System.Windows.Forms.Button();
+            this.boxOutType_ByDate = new System.Windows.Forms.ComboBox();
+            this.boxKLine_ByDate = new System.Windows.Forms.ComboBox();
+            this.txtKLine_ByDate = new System.Windows.Forms.TextBox();
+            this.txtMinuteNumber = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.btnKLineAMByDate = new System.Windows.Forms.Button();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.listKLine = new System.Windows.Forms.ListBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxSMA = new System.Windows.Forms.RichTextBox();
+            this.buttonCalculateSMA = new System.Windows.Forms.Button();
+            this.textBoxSMAperiod = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxSMAStockNo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxBackTesting = new System.Windows.Forms.RichTextBox();
+            this.buttonBackTesting = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBoxTradingStrategy = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxBTEndDate = new System.Windows.Forms.TextBox();
+            this.textBoxBTStartDate = new System.Windows.Forms.TextBox();
+            this.textBoxBTStockNo = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.listTicks2 = new System.Windows.Forms.ListBox();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textBoxD = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxK = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.richTextBoxKD = new System.Windows.Forms.RichTextBox();
+            this.buttonCalculateKD = new System.Windows.Forms.Button();
+            this.textBoxRSVPeriod = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxKDStockNo = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStocks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBest5Bid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBest5Ask)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "登入ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(127, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "密碼";
+            // 
+            // textBox1LoginID
+            // 
+            this.textBox1LoginID.Location = new System.Drawing.Point(6, 34);
+            this.textBox1LoginID.Name = "textBox1LoginID";
+            this.textBox1LoginID.Size = new System.Drawing.Size(100, 22);
+            this.textBox1LoginID.TabIndex = 2;
+            // 
+            // textBox2Password
+            // 
+            this.textBox2Password.Location = new System.Drawing.Point(129, 34);
+            this.textBox2Password.Name = "textBox2Password";
+            this.textBox2Password.PasswordChar = '*';
+            this.textBox2Password.Size = new System.Drawing.Size(100, 22);
+            this.textBox2Password.TabIndex = 3;
+            // 
+            // button1Login
+            // 
+            this.button1Login.Location = new System.Drawing.Point(247, 34);
+            this.button1Login.Name = "button1Login";
+            this.button1Login.Size = new System.Drawing.Size(75, 23);
+            this.button1Login.TabIndex = 4;
+            this.button1Login.Text = "登入";
+            this.button1Login.UseVisualStyleBackColor = true;
+            this.button1Login.Click += new System.EventHandler(this.button1Login_Click);
+            // 
+            // buttonEnterMonitorLONG
+            // 
+            this.buttonEnterMonitorLONG.Location = new System.Drawing.Point(8, 21);
+            this.buttonEnterMonitorLONG.Name = "buttonEnterMonitorLONG";
+            this.buttonEnterMonitorLONG.Size = new System.Drawing.Size(100, 23);
+            this.buttonEnterMonitorLONG.TabIndex = 5;
+            this.buttonEnterMonitorLONG.Text = "連線報價主機";
+            this.buttonEnterMonitorLONG.UseVisualStyleBackColor = true;
+            this.buttonEnterMonitorLONG.Click += new System.EventHandler(this.buttonEnterMonitorLONG_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(355, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(270, 226);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
+            // txtStocks
+            // 
+            this.txtStocks.Location = new System.Drawing.Point(8, 21);
+            this.txtStocks.Name = "txtStocks";
+            this.txtStocks.Size = new System.Drawing.Size(243, 22);
+            this.txtStocks.TabIndex = 7;
+            this.txtStocks.Text = "6005,1815";
+            // 
+            // btnQueryStocks
+            // 
+            this.btnQueryStocks.Location = new System.Drawing.Point(257, 20);
+            this.btnQueryStocks.Name = "btnQueryStocks";
+            this.btnQueryStocks.Size = new System.Drawing.Size(65, 23);
+            this.btnQueryStocks.TabIndex = 8;
+            this.btnQueryStocks.Text = "訂閱報價";
+            this.btnQueryStocks.UseVisualStyleBackColor = true;
+            this.btnQueryStocks.Click += new System.EventHandler(this.btnQueryStocks_Click);
+            // 
+            // btnCancelStocks
+            // 
+            this.btnCancelStocks.Location = new System.Drawing.Point(328, 19);
+            this.btnCancelStocks.Name = "btnCancelStocks";
+            this.btnCancelStocks.Size = new System.Drawing.Size(64, 23);
+            this.btnCancelStocks.TabIndex = 10;
+            this.btnCancelStocks.Text = "取消訂閱";
+            this.btnCancelStocks.UseVisualStyleBackColor = true;
+            this.btnCancelStocks.Click += new System.EventHandler(this.btnCancelStocks_Click);
+            // 
+            // gridStocks
+            // 
+            this.gridStocks.AllowUserToAddRows = false;
+            this.gridStocks.AllowUserToDeleteRows = false;
+            this.gridStocks.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("新細明體", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridStocks.Location = new System.Drawing.Point(5, 49);
+            this.gridStocks.Name = "gridStocks";
+            this.gridStocks.ReadOnly = true;
+            this.gridStocks.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gridStocks.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridStocks.RowTemplate.Height = 24;
+            this.gridStocks.Size = new System.Drawing.Size(595, 219);
+            this.gridStocks.TabIndex = 11;
+            // 
+            // GridBest5Bid
+            // 
+            this.GridBest5Bid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridBest5Bid.Location = new System.Drawing.Point(524, 128);
+            this.GridBest5Bid.MultiSelect = false;
+            this.GridBest5Bid.Name = "GridBest5Bid";
+            this.GridBest5Bid.RowHeadersVisible = false;
+            this.GridBest5Bid.RowTemplate.Height = 24;
+            this.GridBest5Bid.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.GridBest5Bid.Size = new System.Drawing.Size(131, 157);
+            this.GridBest5Bid.TabIndex = 16;
+            // 
+            // GridBest5Ask
+            // 
+            this.GridBest5Ask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridBest5Ask.Location = new System.Drawing.Point(671, 128);
+            this.GridBest5Ask.MultiSelect = false;
+            this.GridBest5Ask.Name = "GridBest5Ask";
+            this.GridBest5Ask.RowHeadersVisible = false;
+            this.GridBest5Ask.RowTemplate.Height = 24;
+            this.GridBest5Ask.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.GridBest5Ask.Size = new System.Drawing.Size(131, 157);
+            this.GridBest5Ask.TabIndex = 15;
+            // 
+            // listTicks
+            // 
+            this.listTicks.BackColor = System.Drawing.SystemColors.Window;
+            this.listTicks.Font = new System.Drawing.Font("新細明體", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.listTicks.FormattingEnabled = true;
+            this.listTicks.HorizontalExtent = 1000;
+            this.listTicks.HorizontalScrollbar = true;
+            this.listTicks.ItemHeight = 17;
+            this.listTicks.Location = new System.Drawing.Point(8, 43);
+            this.listTicks.Name = "listTicks";
+            this.listTicks.ScrollAlwaysVisible = true;
+            this.listTicks.Size = new System.Drawing.Size(510, 242);
+            this.listTicks.TabIndex = 14;
+            // 
+            // btnTicks
+            // 
+            this.btnTicks.Location = new System.Drawing.Point(174, 10);
+            this.btnTicks.Name = "btnTicks";
+            this.btnTicks.Size = new System.Drawing.Size(112, 27);
+            this.btnTicks.TabIndex = 13;
+            this.btnTicks.Text = "訂閱Ticks_Best5";
+            this.btnTicks.UseVisualStyleBackColor = true;
+            this.btnTicks.Click += new System.EventHandler(this.btnTicks_Click);
+            // 
+            // txtTick
+            // 
+            this.txtTick.Location = new System.Drawing.Point(105, 15);
+            this.txtTick.Name = "txtTick";
+            this.txtTick.Size = new System.Drawing.Size(63, 22);
+            this.txtTick.TabIndex = 12;
+            this.txtTick.Text = "6005";
+            // 
+            // btnTickStop
+            // 
+            this.btnTickStop.Location = new System.Drawing.Point(292, 10);
+            this.btnTickStop.Name = "btnTickStop";
+            this.btnTickStop.Size = new System.Drawing.Size(102, 25);
+            this.btnTickStop.TabIndex = 17;
+            this.btnTickStop.Text = "取消訂閱";
+            this.btnTickStop.UseVisualStyleBackColor = true;
+            this.btnTickStop.Click += new System.EventHandler(this.btnTickStop_Click);
+            // 
+            // txtTickPageNo
+            // 
+            this.txtTickPageNo.Location = new System.Drawing.Point(53, 15);
+            this.txtTickPageNo.Name = "txtTickPageNo";
+            this.txtTickPageNo.Size = new System.Drawing.Size(46, 22);
+            this.txtTickPageNo.TabIndex = 23;
+            this.txtTickPageNo.Text = "0";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 18);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(41, 12);
+            this.label45.TabIndex = 22;
+            this.label45.Text = "PageNo";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 18);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(52, 12);
+            this.label42.TabIndex = 27;
+            this.label42.Text = "MarketNo";
+            // 
+            // RequestStockListBtn
+            // 
+            this.RequestStockListBtn.Location = new System.Drawing.Point(92, 12);
+            this.RequestStockListBtn.Name = "RequestStockListBtn";
+            this.RequestStockListBtn.Size = new System.Drawing.Size(135, 29);
+            this.RequestStockListBtn.TabIndex = 26;
+            this.RequestStockListBtn.Text = "RequestStockList";
+            this.RequestStockListBtn.UseVisualStyleBackColor = true;
+            this.RequestStockListBtn.Click += new System.EventHandler(this.RequestStockListBtn_Click);
+            // 
+            // MarketNo_txt
+            // 
+            this.MarketNo_txt.Location = new System.Drawing.Point(64, 15);
+            this.MarketNo_txt.Name = "MarketNo_txt";
+            this.MarketNo_txt.Size = new System.Drawing.Size(22, 22);
+            this.MarketNo_txt.TabIndex = 25;
+            // 
+            // StockList
+            // 
+            this.StockList.FormattingEnabled = true;
+            this.StockList.HorizontalScrollbar = true;
+            this.StockList.ItemHeight = 12;
+            this.StockList.Location = new System.Drawing.Point(8, 43);
+            this.StockList.Name = "StockList";
+            this.StockList.ScrollAlwaysVisible = true;
+            this.StockList.Size = new System.Drawing.Size(816, 232);
+            this.StockList.TabIndex = 24;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox1LoginID);
+            this.groupBox1.Controls.Add(this.textBox2Password);
+            this.groupBox1.Controls.Add(this.button1Login);
+            this.groupBox1.Location = new System.Drawing.Point(17, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(332, 72);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "登入";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonEnterMonitorLONG);
+            this.groupBox2.Location = new System.Drawing.Point(17, 89);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(332, 149);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "行情";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label42);
+            this.groupBox3.Controls.Add(this.MarketNo_txt);
+            this.groupBox3.Controls.Add(this.RequestStockListBtn);
+            this.groupBox3.Controls.Add(this.StockList);
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(830, 286);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "商品檔查詢";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtStocks);
+            this.groupBox4.Controls.Add(this.btnQueryStocks);
+            this.groupBox4.Controls.Add(this.btnCancelStocks);
+            this.groupBox4.Controls.Add(this.gridStocks);
+            this.groupBox4.Location = new System.Drawing.Point(5, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(606, 298);
+            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "即時報價";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label45);
+            this.groupBox5.Controls.Add(this.txtTickPageNo);
+            this.groupBox5.Controls.Add(this.txtTick);
+            this.groupBox5.Controls.Add(this.btnTicks);
+            this.groupBox5.Controls.Add(this.btnTickStop);
+            this.groupBox5.Controls.Add(this.GridBest5Ask);
+            this.groupBox5.Controls.Add(this.GridBest5Bid);
+            this.groupBox5.Controls.Add(this.listTicks);
+            this.groupBox5.Location = new System.Drawing.Point(6, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(821, 298);
+            this.groupBox5.TabIndex = 32;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Ticks跟5檔";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textbstrCommentCancel);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.btnSendStockSocketAlter);
+            this.groupBox6.Controls.Add(this.txtCancelSeqNo);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Location = new System.Drawing.Point(17, 335);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(612, 42);
+            this.groupBox6.TabIndex = 34;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "證券刪單";
+            // 
+            // textbstrCommentCancel
+            // 
+            this.textbstrCommentCancel.Location = new System.Drawing.Point(316, 11);
+            this.textbstrCommentCancel.Name = "textbstrCommentCancel";
+            this.textbstrCommentCancel.Size = new System.Drawing.Size(49, 22);
+            this.textbstrCommentCancel.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(231, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "自定義欄位";
+            // 
+            // btnSendStockSocketAlter
+            // 
+            this.btnSendStockSocketAlter.Location = new System.Drawing.Point(371, 11);
+            this.btnSendStockSocketAlter.Name = "btnSendStockSocketAlter";
+            this.btnSendStockSocketAlter.Size = new System.Drawing.Size(152, 23);
+            this.btnSendStockSocketAlter.TabIndex = 5;
+            this.btnSendStockSocketAlter.Text = "SendStockSocketAlter";
+            this.btnSendStockSocketAlter.UseVisualStyleBackColor = true;
+            this.btnSendStockSocketAlter.Click += new System.EventHandler(this.btnSendStockSocketAlter_Click);
+            // 
+            // txtCancelSeqNo
+            // 
+            this.txtCancelSeqNo.Location = new System.Drawing.Point(79, 12);
+            this.txtCancelSeqNo.Name = "txtCancelSeqNo";
+            this.txtCancelSeqNo.Size = new System.Drawing.Size(149, 22);
+            this.txtCancelSeqNo.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "委託序號";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.textbstrCommentOrder);
+            this.groupBox7.Controls.Add(this.btnSendStockSocketOrder);
+            this.groupBox7.Controls.Add(this.txtQty);
+            this.groupBox7.Controls.Add(this.txtPrice);
+            this.groupBox7.Controls.Add(this.boxBidAsk);
+            this.groupBox7.Controls.Add(this.txtStockNo);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Location = new System.Drawing.Point(12, 249);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(617, 80);
+            this.groupBox7.TabIndex = 33;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "證券新單";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(314, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "自定義欄位";
+            // 
+            // textbstrCommentOrder
+            // 
+            this.textbstrCommentOrder.Location = new System.Drawing.Point(316, 45);
+            this.textbstrCommentOrder.Name = "textbstrCommentOrder";
+            this.textbstrCommentOrder.Size = new System.Drawing.Size(49, 22);
+            this.textbstrCommentOrder.TabIndex = 9;
+            // 
+            // btnSendStockSocketOrder
+            // 
+            this.btnSendStockSocketOrder.Location = new System.Drawing.Point(371, 43);
+            this.btnSendStockSocketOrder.Name = "btnSendStockSocketOrder";
+            this.btnSendStockSocketOrder.Size = new System.Drawing.Size(152, 24);
+            this.btnSendStockSocketOrder.TabIndex = 8;
+            this.btnSendStockSocketOrder.Text = "SendStockSocketOrder";
+            this.btnSendStockSocketOrder.UseVisualStyleBackColor = true;
+            this.btnSendStockSocketOrder.Click += new System.EventHandler(this.btnSendStockSocketOrder_Click);
+            // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(247, 43);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(49, 22);
+            this.txtQty.TabIndex = 6;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(154, 43);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(74, 22);
+            this.txtPrice.TabIndex = 5;
+            // 
+            // boxBidAsk
+            // 
+            this.boxBidAsk.FormattingEnabled = true;
+            this.boxBidAsk.Items.AddRange(new object[] {
+            "買",
+            "賣"});
+            this.boxBidAsk.Location = new System.Drawing.Point(90, 45);
+            this.boxBidAsk.Name = "boxBidAsk";
+            this.boxBidAsk.Size = new System.Drawing.Size(49, 20);
+            this.boxBidAsk.TabIndex = 2;
+            // 
+            // txtStockNo
+            // 
+            this.txtStockNo.Location = new System.Drawing.Point(19, 45);
+            this.txtStockNo.MaxLength = 8;
+            this.txtStockNo.Name = "txtStockNo";
+            this.txtStockNo.Size = new System.Drawing.Size(64, 22);
+            this.txtStockNo.TabIndex = 1;
+            this.txtStockNo.Text = "6005";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(243, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "委託量";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(152, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 12);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "委託價";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(88, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "買賣別";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "商品代碼";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnSocketOrderHistoryReport);
+            this.groupBox8.Location = new System.Drawing.Point(17, 383);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(612, 42);
+            this.groupBox8.TabIndex = 35;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "今日下單紀錄查詢";
+            // 
+            // btnSocketOrderHistoryReport
+            // 
+            this.btnSocketOrderHistoryReport.Location = new System.Drawing.Point(8, 13);
+            this.btnSocketOrderHistoryReport.Name = "btnSocketOrderHistoryReport";
+            this.btnSocketOrderHistoryReport.Size = new System.Drawing.Size(178, 23);
+            this.btnSocketOrderHistoryReport.TabIndex = 5;
+            this.btnSocketOrderHistoryReport.Text = "查詢";
+            this.btnSocketOrderHistoryReport.UseVisualStyleBackColor = true;
+            this.btnSocketOrderHistoryReport.Click += new System.EventHandler(this.btnSocketOrderHistoryReport_Click);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.listMessage);
+            this.groupBox9.Location = new System.Drawing.Point(635, 335);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(838, 176);
+            this.groupBox9.TabIndex = 36;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "回報";
+            // 
+            // listMessage
+            // 
+            this.listMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listMessage.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listMessage.FormattingEnabled = true;
+            this.listMessage.HorizontalExtent = 20000;
+            this.listMessage.HorizontalScrollbar = true;
+            this.listMessage.ItemHeight = 16;
+            this.listMessage.Location = new System.Drawing.Point(6, 23);
+            this.listMessage.Name = "listMessage";
+            this.listMessage.ScrollAlwaysVisible = true;
+            this.listMessage.Size = new System.Drawing.Size(821, 148);
+            this.listMessage.TabIndex = 13;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.buttonClearKlineData);
+            this.groupBox10.Controls.Add(this.boxOutType_ByDate);
+            this.groupBox10.Controls.Add(this.boxKLine_ByDate);
+            this.groupBox10.Controls.Add(this.txtKLine_ByDate);
+            this.groupBox10.Controls.Add(this.txtMinuteNumber);
+            this.groupBox10.Controls.Add(this.label59);
+            this.groupBox10.Controls.Add(this.label47);
+            this.groupBox10.Controls.Add(this.label46);
+            this.groupBox10.Controls.Add(this.btnKLineAMByDate);
+            this.groupBox10.Controls.Add(this.txtEndDate);
+            this.groupBox10.Controls.Add(this.txtStartDate);
+            this.groupBox10.Controls.Add(this.listKLine);
+            this.groupBox10.Location = new System.Drawing.Point(7, 431);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(622, 277);
+            this.groupBox10.TabIndex = 37;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "歷史K線";
+            // 
+            // buttonClearKlineData
+            // 
+            this.buttonClearKlineData.Location = new System.Drawing.Point(269, 77);
+            this.buttonClearKlineData.Name = "buttonClearKlineData";
+            this.buttonClearKlineData.Size = new System.Drawing.Size(128, 23);
+            this.buttonClearKlineData.TabIndex = 38;
+            this.buttonClearKlineData.Text = "手動清除K線資料";
+            this.buttonClearKlineData.UseVisualStyleBackColor = true;
+            this.buttonClearKlineData.Click += new System.EventHandler(this.buttonClearKlineData_Click);
+            // 
+            // boxOutType_ByDate
+            // 
+            this.boxOutType_ByDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxOutType_ByDate.FormattingEnabled = true;
+            this.boxOutType_ByDate.Items.AddRange(new object[] {
+            "0 = 舊版輸出格式",
+            "1 = 新版輸出格式"});
+            this.boxOutType_ByDate.Location = new System.Drawing.Point(88, 48);
+            this.boxOutType_ByDate.Name = "boxOutType_ByDate";
+            this.boxOutType_ByDate.Size = new System.Drawing.Size(198, 20);
+            this.boxOutType_ByDate.TabIndex = 34;
+            // 
+            // boxKLine_ByDate
+            // 
+            this.boxKLine_ByDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxKLine_ByDate.FormattingEnabled = true;
+            this.boxKLine_ByDate.Items.AddRange(new object[] {
+            "0 = 分鐘線",
+            "1(無)",
+            "2(無)",
+            "3(無)",
+            "4 = 日線",
+            "5 = 週線",
+            "6 = 月線"});
+            this.boxKLine_ByDate.Location = new System.Drawing.Point(88, 18);
+            this.boxKLine_ByDate.Name = "boxKLine_ByDate";
+            this.boxKLine_ByDate.Size = new System.Drawing.Size(198, 20);
+            this.boxKLine_ByDate.TabIndex = 33;
+            // 
+            // txtKLine_ByDate
+            // 
+            this.txtKLine_ByDate.Location = new System.Drawing.Point(19, 44);
+            this.txtKLine_ByDate.Name = "txtKLine_ByDate";
+            this.txtKLine_ByDate.Size = new System.Drawing.Size(63, 22);
+            this.txtKLine_ByDate.TabIndex = 32;
+            this.txtKLine_ByDate.Text = "6005";
+            // 
+            // txtMinuteNumber
+            // 
+            this.txtMinuteNumber.Location = new System.Drawing.Point(295, 44);
+            this.txtMinuteNumber.Name = "txtMinuteNumber";
+            this.txtMinuteNumber.Size = new System.Drawing.Size(70, 22);
+            this.txtMinuteNumber.TabIndex = 31;
+            this.txtMinuteNumber.Text = "5";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(292, 18);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(140, 12);
+            this.label59.TabIndex = 30;
+            this.label59.Text = "MinuteNumber(指定幾分K)";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(438, 48);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(45, 12);
+            this.label47.TabIndex = 29;
+            this.label47.Text = "EndDate";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(438, 18);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(47, 12);
+            this.label46.TabIndex = 28;
+            this.label46.Text = "StartDate";
+            // 
+            // btnKLineAMByDate
+            // 
+            this.btnKLineAMByDate.Location = new System.Drawing.Point(403, 77);
+            this.btnKLineAMByDate.Name = "btnKLineAMByDate";
+            this.btnKLineAMByDate.Size = new System.Drawing.Size(205, 23);
+            this.btnKLineAMByDate.TabIndex = 27;
+            this.btnKLineAMByDate.Text = "SKQuoteLib_ReqKLineAMByDate";
+            this.btnKLineAMByDate.UseVisualStyleBackColor = true;
+            this.btnKLineAMByDate.Click += new System.EventHandler(this.btnKLineAMByDate_Click);
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.Location = new System.Drawing.Point(504, 45);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(100, 22);
+            this.txtEndDate.TabIndex = 26;
+            this.txtEndDate.Text = "20260401";
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.Location = new System.Drawing.Point(504, 12);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(100, 22);
+            this.txtStartDate.TabIndex = 25;
+            this.txtStartDate.Text = "20260223";
+            // 
+            // listKLine
+            // 
+            this.listKLine.Font = new System.Drawing.Font("新細明體", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.listKLine.FormattingEnabled = true;
+            this.listKLine.ItemHeight = 17;
+            this.listKLine.Location = new System.Drawing.Point(6, 106);
+            this.listKLine.Name = "listKLine";
+            this.listKLine.Size = new System.Drawing.Size(602, 157);
+            this.listKLine.TabIndex = 24;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.richTextBoxSMA);
+            this.groupBox11.Controls.Add(this.buttonCalculateSMA);
+            this.groupBox11.Controls.Add(this.textBoxSMAperiod);
+            this.groupBox11.Controls.Add(this.label11);
+            this.groupBox11.Controls.Add(this.textBoxSMAStockNo);
+            this.groupBox11.Controls.Add(this.label7);
+            this.groupBox11.Location = new System.Drawing.Point(635, 517);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(454, 203);
+            this.groupBox11.TabIndex = 38;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "簡單移動平均線計算";
+            // 
+            // richTextBoxSMA
+            // 
+            this.richTextBoxSMA.Location = new System.Drawing.Point(8, 71);
+            this.richTextBoxSMA.Name = "richTextBoxSMA";
+            this.richTextBoxSMA.Size = new System.Drawing.Size(425, 120);
+            this.richTextBoxSMA.TabIndex = 37;
+            this.richTextBoxSMA.Text = "";
+            // 
+            // buttonCalculateSMA
+            // 
+            this.buttonCalculateSMA.Location = new System.Drawing.Point(172, 41);
+            this.buttonCalculateSMA.Name = "buttonCalculateSMA";
+            this.buttonCalculateSMA.Size = new System.Drawing.Size(205, 23);
+            this.buttonCalculateSMA.TabIndex = 36;
+            this.buttonCalculateSMA.Text = "CalculateSMA";
+            this.buttonCalculateSMA.UseVisualStyleBackColor = true;
+            this.buttonCalculateSMA.Click += new System.EventHandler(this.buttonCalculateSMA_Click);
+            // 
+            // textBoxSMAperiod
+            // 
+            this.textBoxSMAperiod.Location = new System.Drawing.Point(87, 43);
+            this.textBoxSMAperiod.Name = "textBoxSMAperiod";
+            this.textBoxSMAperiod.Size = new System.Drawing.Size(70, 22);
+            this.textBoxSMAperiod.TabIndex = 35;
+            this.textBoxSMAperiod.Text = "5";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(85, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 12);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "指定幾日均線";
+            // 
+            // textBoxSMAStockNo
+            // 
+            this.textBoxSMAStockNo.Location = new System.Drawing.Point(8, 43);
+            this.textBoxSMAStockNo.Name = "textBoxSMAStockNo";
+            this.textBoxSMAStockNo.Size = new System.Drawing.Size(70, 22);
+            this.textBoxSMAStockNo.TabIndex = 33;
+            this.textBoxSMAStockNo.Text = "6005";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "商品代號";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(631, 2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(846, 327);
+            this.tabControl1.TabIndex = 39;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(838, 301);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "即時報價";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(838, 301);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Ticks跟5檔";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(838, 301);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "商品檔查詢";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.richTextBoxBackTesting);
+            this.groupBox12.Controls.Add(this.buttonBackTesting);
+            this.groupBox12.Controls.Add(this.label15);
+            this.groupBox12.Controls.Add(this.comboBoxTradingStrategy);
+            this.groupBox12.Controls.Add(this.label13);
+            this.groupBox12.Controls.Add(this.label14);
+            this.groupBox12.Controls.Add(this.textBoxBTEndDate);
+            this.groupBox12.Controls.Add(this.textBoxBTStartDate);
+            this.groupBox12.Controls.Add(this.textBoxBTStockNo);
+            this.groupBox12.Controls.Add(this.label12);
+            this.groupBox12.Location = new System.Drawing.Point(7, 726);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(1082, 191);
+            this.groupBox12.TabIndex = 40;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "回測";
+            // 
+            // richTextBoxBackTesting
+            // 
+            this.richTextBoxBackTesting.Location = new System.Drawing.Point(6, 68);
+            this.richTextBoxBackTesting.Name = "richTextBoxBackTesting";
+            this.richTextBoxBackTesting.Size = new System.Drawing.Size(1070, 120);
+            this.richTextBoxBackTesting.TabIndex = 43;
+            this.richTextBoxBackTesting.Text = "";
+            // 
+            // buttonBackTesting
+            // 
+            this.buttonBackTesting.Location = new System.Drawing.Point(499, 39);
+            this.buttonBackTesting.Name = "buttonBackTesting";
+            this.buttonBackTesting.Size = new System.Drawing.Size(105, 23);
+            this.buttonBackTesting.TabIndex = 42;
+            this.buttonBackTesting.Text = "開始回測";
+            this.buttonBackTesting.UseVisualStyleBackColor = true;
+            this.buttonBackTesting.Click += new System.EventHandler(this.buttonBackTesting_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(267, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "交易策略";
+            // 
+            // comboBoxTradingStrategy
+            // 
+            this.comboBoxTradingStrategy.FormattingEnabled = true;
+            this.comboBoxTradingStrategy.Items.AddRange(new object[] {
+            "價格區間策略"});
+            this.comboBoxTradingStrategy.Location = new System.Drawing.Point(263, 40);
+            this.comboBoxTradingStrategy.Name = "comboBoxTradingStrategy";
+            this.comboBoxTradingStrategy.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxTradingStrategy.TabIndex = 40;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(86, 43);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 12);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "EndDate";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(86, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "StartDate";
+            // 
+            // textBoxBTEndDate
+            // 
+            this.textBoxBTEndDate.Location = new System.Drawing.Point(152, 40);
+            this.textBoxBTEndDate.Name = "textBoxBTEndDate";
+            this.textBoxBTEndDate.Size = new System.Drawing.Size(100, 22);
+            this.textBoxBTEndDate.TabIndex = 37;
+            this.textBoxBTEndDate.Text = "2026/2/26 13:30:00";
+            // 
+            // textBoxBTStartDate
+            // 
+            this.textBoxBTStartDate.Location = new System.Drawing.Point(152, 12);
+            this.textBoxBTStartDate.Name = "textBoxBTStartDate";
+            this.textBoxBTStartDate.Size = new System.Drawing.Size(100, 22);
+            this.textBoxBTStartDate.TabIndex = 36;
+            this.textBoxBTStartDate.Text = "2026/2/23 09:00:00";
+            // 
+            // textBoxBTStockNo
+            // 
+            this.textBoxBTStockNo.Location = new System.Drawing.Point(7, 35);
+            this.textBoxBTStockNo.Name = "textBoxBTStockNo";
+            this.textBoxBTStockNo.Size = new System.Drawing.Size(70, 22);
+            this.textBoxBTStockNo.TabIndex = 35;
+            this.textBoxBTStockNo.Text = "6005";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(5, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "商品代號";
+            // 
+            // listTicks2
+            // 
+            this.listTicks2.BackColor = System.Drawing.SystemColors.Window;
+            this.listTicks2.Font = new System.Drawing.Font("新細明體", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.listTicks2.FormattingEnabled = true;
+            this.listTicks2.HorizontalExtent = 1000;
+            this.listTicks2.HorizontalScrollbar = true;
+            this.listTicks2.ItemHeight = 17;
+            this.listTicks2.Location = new System.Drawing.Point(6, 17);
+            this.listTicks2.Name = "listTicks2";
+            this.listTicks2.ScrollAlwaysVisible = true;
+            this.listTicks2.Size = new System.Drawing.Size(358, 174);
+            this.listTicks2.TabIndex = 41;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.listTicks2);
+            this.groupBox13.Location = new System.Drawing.Point(1095, 517);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(367, 203);
+            this.groupBox13.TabIndex = 42;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "收歷史Tick自組1分K";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.textBoxD);
+            this.groupBox14.Controls.Add(this.label18);
+            this.groupBox14.Controls.Add(this.textBoxK);
+            this.groupBox14.Controls.Add(this.label19);
+            this.groupBox14.Controls.Add(this.richTextBoxKD);
+            this.groupBox14.Controls.Add(this.buttonCalculateKD);
+            this.groupBox14.Controls.Add(this.textBoxRSVPeriod);
+            this.groupBox14.Controls.Add(this.label16);
+            this.groupBox14.Controls.Add(this.textBoxKDStockNo);
+            this.groupBox14.Controls.Add(this.label17);
+            this.groupBox14.Location = new System.Drawing.Point(1095, 732);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(367, 185);
+            this.groupBox14.TabIndex = 43;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "KD 黃金交叉、死亡交叉買賣訊號";
+            // 
+            // textBoxD
+            // 
+            this.textBoxD.Location = new System.Drawing.Point(85, 82);
+            this.textBoxD.Name = "textBoxD";
+            this.textBoxD.Size = new System.Drawing.Size(70, 22);
+            this.textBoxD.TabIndex = 47;
+            this.textBoxD.Text = "3";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(83, 65);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(61, 12);
+            this.label18.TabIndex = 46;
+            this.label18.Text = "D平滑參數";
+            // 
+            // textBoxK
+            // 
+            this.textBoxK.Location = new System.Drawing.Point(6, 82);
+            this.textBoxK.Name = "textBoxK";
+            this.textBoxK.Size = new System.Drawing.Size(70, 22);
+            this.textBoxK.TabIndex = 45;
+            this.textBoxK.Text = "3";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 65);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 12);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "K平滑參數";
+            // 
+            // richTextBoxKD
+            // 
+            this.richTextBoxKD.Location = new System.Drawing.Point(6, 110);
+            this.richTextBoxKD.Name = "richTextBoxKD";
+            this.richTextBoxKD.Size = new System.Drawing.Size(355, 68);
+            this.richTextBoxKD.TabIndex = 43;
+            this.richTextBoxKD.Text = "";
+            // 
+            // buttonCalculateKD
+            // 
+            this.buttonCalculateKD.Location = new System.Drawing.Point(170, 35);
+            this.buttonCalculateKD.Name = "buttonCalculateKD";
+            this.buttonCalculateKD.Size = new System.Drawing.Size(191, 23);
+            this.buttonCalculateKD.TabIndex = 42;
+            this.buttonCalculateKD.Text = "CalculateKD";
+            this.buttonCalculateKD.UseVisualStyleBackColor = true;
+            this.buttonCalculateKD.Click += new System.EventHandler(this.buttonCalculateKD_Click);
+            // 
+            // textBoxRSVPeriod
+            // 
+            this.textBoxRSVPeriod.Location = new System.Drawing.Point(85, 37);
+            this.textBoxRSVPeriod.Name = "textBoxRSVPeriod";
+            this.textBoxRSVPeriod.Size = new System.Drawing.Size(70, 22);
+            this.textBoxRSVPeriod.TabIndex = 41;
+            this.textBoxRSVPeriod.Text = "9";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(83, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 12);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "RSV期間(>=9)";
+            // 
+            // textBoxKDStockNo
+            // 
+            this.textBoxKDStockNo.Location = new System.Drawing.Point(6, 37);
+            this.textBoxKDStockNo.Name = "textBoxKDStockNo";
+            this.textBoxKDStockNo.Size = new System.Drawing.Size(70, 22);
+            this.textBoxKDStockNo.TabIndex = 39;
+            this.textBoxKDStockNo.Text = "6005";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(4, 20);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 12);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "商品代號";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1478, 922);
+            this.Controls.Add(this.groupBox14);
+            this.Controls.Add(this.groupBox13);
+            this.Controls.Add(this.groupBox12);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.groupBox11);
+            this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.richTextBox1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridStocks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBest5Bid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridBest5Ask)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1LoginID;
+        private System.Windows.Forms.TextBox textBox2Password;
+        private System.Windows.Forms.Button button1Login;
+        private System.Windows.Forms.Button buttonEnterMonitorLONG;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox txtStocks;
+        private System.Windows.Forms.Button btnQueryStocks;
+        private System.Windows.Forms.Button btnCancelStocks;
+        private System.Windows.Forms.DataGridView gridStocks;
+        private System.Windows.Forms.DataGridView GridBest5Bid;
+        private System.Windows.Forms.DataGridView GridBest5Ask;
+        private System.Windows.Forms.ListBox listTicks;
+        private System.Windows.Forms.Button btnTicks;
+        private System.Windows.Forms.TextBox txtTick;
+        private System.Windows.Forms.Button btnTickStop;
+        private System.Windows.Forms.TextBox txtTickPageNo;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button RequestStockListBtn;
+        private System.Windows.Forms.TextBox MarketNo_txt;
+        private System.Windows.Forms.ListBox StockList;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnSendStockSocketAlter;
+        private System.Windows.Forms.TextBox txtCancelSeqNo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnSendStockSocketOrder;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ComboBox boxBidAsk;
+        private System.Windows.Forms.TextBox txtStockNo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textbstrCommentOrder;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btnSocketOrderHistoryReport;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.ListBox listMessage;
+        private System.Windows.Forms.TextBox textbstrCommentCancel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.ComboBox boxOutType_ByDate;
+        private System.Windows.Forms.ComboBox boxKLine_ByDate;
+        private System.Windows.Forms.TextBox txtKLine_ByDate;
+        private System.Windows.Forms.TextBox txtMinuteNumber;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button btnKLineAMByDate;
+        private System.Windows.Forms.TextBox txtEndDate;
+        private System.Windows.Forms.TextBox txtStartDate;
+        private System.Windows.Forms.ListBox listKLine;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button buttonCalculateSMA;
+        private System.Windows.Forms.TextBox textBoxSMAperiod;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxSMAStockNo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox richTextBoxSMA;
+        private System.Windows.Forms.Button buttonClearKlineData;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.RichTextBox richTextBoxBackTesting;
+        private System.Windows.Forms.Button buttonBackTesting;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBoxTradingStrategy;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxBTEndDate;
+        private System.Windows.Forms.TextBox textBoxBTStartDate;
+        private System.Windows.Forms.TextBox textBoxBTStockNo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ListBox listTicks2;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.RichTextBox richTextBoxKD;
+        private System.Windows.Forms.Button buttonCalculateKD;
+        private System.Windows.Forms.TextBox textBoxRSVPeriod;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBoxKDStockNo;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBoxD;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxK;
+        private System.Windows.Forms.Label label19;
+    }
+}
+
